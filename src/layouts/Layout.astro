@@ -1,4 +1,11 @@
 ---
+
+//bootstrap
+import '../styles/bootstrap.scss';
+
+//custom CSS
+import '../styles/custom.scss';
+
 interface Props {
 	title: string;
 }
@@ -7,45 +14,62 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		
+		<title>{title}</title>
+
+		<meta name="author" content="Felipe Trombini" />
+		<meta
+			name="description"
+			content="Confira meu portfólio. Desenvolvedor PHP apaixonado por desenvolvimento web e análise de dados. Experiência em rotinas empresariais, sistemas ERP e fluxos de trabalho de e-commerce em larga escala. Proficiente em PHP/Laravel, CSS, JavaScript e SQL. Aplicativos publicados na App Store e Play Store."
+		/>
+		<meta
+			name="keywords"
+			content="desenvolvedor web, análise de dados, PHP, Laravel, CSS, JavaScript, SQL, e-commerce, ERP, desenvolvimento de software, aplicativos móveis, desenvolvedor frontend, desenvolvedor backend, portfólio de desenvolvedor, desenvolvimento web no Brasil, desenvolvedor freelance"
+		/>
+
+		<!-- robots -->
+		<meta name="robots" content="index, follow" />
+
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org/",
+				"@type": "Person",
+				"name": "Felipe Trombini",
+				"url": "",
+				"image": "",
+				"sameAs": "https://www.linkedin.com/in/felipesantostrombini/"
+			}
+		</script>
+
 	</head>
 	<body>
 		<slot />
+		<script>
+			//TODO verificar o que vai ser necessário
+			// Import only what you need
+			//import 'bootstrap/js/dist/alert';
+			//import 'bootstrap/js/dist/button';
+			//import 'bootstrap/js/dist/carousel';
+			import 'bootstrap/js/dist/collapse';
+			import 'bootstrap/js/dist/dropdown';
+			//import 'bootstrap/js/dist/modal';
+			//import 'bootstrap/js/dist/offcanvas';
+			//import 'bootstrap/js/dist/popover';
+			//import 'bootstrap/js/dist/scrollspy';
+			//import 'bootstrap/js/dist/tab';
+			//import 'bootstrap/js/dist/toast';
+			//import 'bootstrap/js/dist/tooltip';
+		</script>
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+	
+
 </style>

@@ -1,0 +1,94 @@
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.btn{
+    transition: all 0.3s ease;
+}
+
+.btn-red{
+    background-color: #F00;
+    color: #fff;
+    &:hover{
+        color: #fff;
+        background-color: darken(#F00, 10%);
+    }
+}
+
+
+main{
+
+    margin-top: 25px;
+    min-height: 100vh;
+}
+
+#about{
+
+    img.rounded-picture{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+
+}
+
+#contact{
+
+    h2{
+        margin-bottom: 3vh;
+    }
+
+}
+
+#projects{
+    min-height: 50vh;
+
+    img{
+
+        transition: all 0.5s ease;
+
+        &:hover{
+            transform: scale(1.05);
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+    }
+
+    .row{
+        margin-top: 5vh;
+    }
+
+}
+
+#contact{
+
+    margin-top: 5vh;
+
+}
+
+
+footer{
+
+    margin-top: 5vh;
+
+    background-color: #000;
+    color: #fff;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+}
