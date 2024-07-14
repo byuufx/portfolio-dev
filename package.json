@@ -13,9 +13,11 @@
     "@astrojs/check": "^0.8.1",
     "astro": "^4.11.5",
     "astro-purgecss": "^4.1.1",
+    "astro-seo-schema": "^4.0.2",
     "bootstrap": "^5.3.3",
     "purgecss": "^6.0.0",
     "sass": "^1.77.8",
+    "schema-dts": "^1.1.2",
     "typescript": "^5.5.3"
   },
   "devDependencies": {

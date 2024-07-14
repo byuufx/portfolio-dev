@@ -6,11 +6,21 @@ import '../styles/bootstrap.scss';
 //custom CSS
 import '../styles/custom.scss';
 
+//schema.org
+import { Schema } from "astro-seo-schema"
+
+//dynamic data (content.json)
+import content from '../data/content.json';
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
+const { author, linkedin } = content.about;
+
+
 ---
 
 <!doctype html>
@@ -20,32 +30,34 @@ const { title } = Astro.props;
 		
 		<title>{title}</title>
 
-		<meta name="author" content="Felipe Trombini" />
+		<meta name="author" content={author} >
 		<meta
 			name="description"
 			content="Confira meu portfólio. Desenvolvedor PHP apaixonado por desenvolvimento web e análise de dados. Experiência em rotinas empresariais, sistemas ERP e fluxos de trabalho de e-commerce em larga escala. Proficiente em PHP/Laravel, CSS, JavaScript e SQL. Aplicativos publicados na App Store e Play Store."
-		/>
+		>
 		<meta
 			name="keywords"
 			content="desenvolvedor web, análise de dados, PHP, Laravel, CSS, JavaScript, SQL, e-commerce, ERP, desenvolvimento de software, aplicativos móveis, desenvolvedor frontend, desenvolvedor backend, portfólio de desenvolvedor, desenvolvimento web no Brasil, desenvolvedor freelance"
-		/>
+		>
 
 		<!-- robots -->
-		<meta name="robots" content="index, follow" />
+		<meta name="robots" content="index, follow" >
 
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" >
+		<link rel="icon" type="image/svg+xml" href="/portfolio-dev/favicon.svg" />
 
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org/",
+		<!-- Schema.org -->
+		<Schema
+			item={{
+				"@context": "https://schema.org",
 				"@type": "Person",
-				"name": "Felipe Trombini",
-				"url": "",
-				"image": "",
-				"sameAs": "https://www.linkedin.com/in/felipesantostrombini/"
-			}
-		</script>
+				name: author,
+				url: Astro.url.pathname,
+				sameAs: [
+					linkedin
+				]
+			}}
+		/>
 
 	</head>
 	<body>
