@@ -6,6 +6,7 @@ import purgecss from "astro-purgecss";
 export default defineConfig({
   site: 'https://byuufx.github.io', //https://docs.astro.build/en/guides/deploy/github/
   base: import.meta.env.MODE == 'production' ? '/portfolio-dev/' : '', //FIX for GitHub Pages https://docs.astro.build/en/guides/environment-variables/
-  integrations: [purgecss()]
+  integrations: [purgecss()],
+  output: 'static',
 });
 
