@@ -1,6 +1,35 @@
 {
     "about" : {
         "author" : "Felipe Trombini",
-        "linkedin" : "https://www.linkedin.com/in/felipesantostrombini/"
-    }
+        "email" : "felipetrombini54@gmail.com",
+        "linkedin" : "https://www.linkedin.com/in/felipesantostrombini/",
+        "github": "https://github.com/byuufx",
+        "image" : "/trombini.webp"
+    },
+    "projects" : [
+        {
+            "name" : "DataCons",
+            "url" : "https://datacons.com.br/",
+            "image" : "/datacons.webp",
+            "category" : "freelance"
+        },
+        {
+            "name" : "Diplomata",
+            "url" : "https://diplomata.com.br/",
+            "image" : "/diplomata.webp",
+            "category" : "freelance"
+        },
+        {
+            "name" : "Escola Girassol",
+            "url" : "https://escolagirassol.com/",
+            "image" : "/escolagirassol.webp",
+            "category" : "freelance"
+        },
+        {
+            "name" : "EPR Litoral Pioneiro",
+            "url" : "https://play.google.com/store/apps/details?id=br.com.app.gpu3075278.gpu06c90c41f7b9b397a9533697fa5ddeb3&hl=pt_BR",
+            "image" : "/epr.webp",
+            "category" : "tribox"
+        }
+    ]
 }

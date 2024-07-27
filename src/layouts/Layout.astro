@@ -1,5 +1,9 @@
 ---
 
+interface Props {
+	title: string;
+}
+
 //bootstrap
 import '../styles/bootstrap.scss';
 
@@ -12,13 +16,10 @@ import { Schema } from "astro-seo-schema"
 //dynamic data (content.json)
 import content from '../data/content.json';
 
-interface Props {
-	title: string;
-}
-
 const { title } = Astro.props;
 
-const { author, linkedin } = content.about;
+const { author, linkedin, github, image } = content.about;
+
 
 
 ---
@@ -44,7 +45,7 @@ const { author, linkedin } = content.about;
 		<meta name="robots" content="index, follow" >
 
 		<meta name="viewport" content="width=device-width" >
-		<link rel="icon" type="image/svg+xml" href="/portfolio-dev/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 		<!-- Schema.org -->
 		<Schema
@@ -52,10 +53,12 @@ const { author, linkedin } = content.about;
 				"@context": "https://schema.org",
 				"@type": "Person",
 				name: author,
-				url: Astro.url.pathname,
+				url: Astro.request.url,
 				sameAs: [
-					linkedin
-				]
+					linkedin,
+					github
+				],
+				image: image
 			}}
 		/>
 
@@ -63,7 +66,7 @@ const { author, linkedin } = content.about;
 	<body>
 		<slot />
 		<script>
-			//TODO verificar o que vai ser necessário
+			//TODO add new scripts here
 			// Import only what you need
 			//import 'bootstrap/js/dist/alert';
 			//import 'bootstrap/js/dist/button';
@@ -74,7 +77,7 @@ const { author, linkedin } = content.about;
 			//import 'bootstrap/js/dist/offcanvas';
 			//import 'bootstrap/js/dist/popover';
 			//import 'bootstrap/js/dist/scrollspy';
-			//import 'bootstrap/js/dist/tab';
+			import 'bootstrap/js/dist/tab';
 			//import 'bootstrap/js/dist/toast';
 			//import 'bootstrap/js/dist/tooltip';
 		</script>

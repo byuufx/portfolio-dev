@@ -63,6 +63,10 @@ main{
 
     }
 
+    [class^="col-"]{
+        margin-top: 25px;
+    }
+
     .row{
         margin-top: 5vh;
     }
@@ -87,6 +91,7 @@ footer{
     padding-bottom: 25px;
 
     p{
+        text-align: center;
         margin-top: 0;
         margin-bottom: 0;
     }
