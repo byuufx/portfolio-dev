@@ -48,7 +48,7 @@ const BASE_URL = import.meta.env.MODE == 'production' ? '/portfolio-dev' : '';
 						</article>
 						<aside>
 							<figure>
-								<img loading="lazy" class="rounded-picture" src={image} alt={author} />
+								<img loading="lazy" class="rounded-picture" src={BASE_URL + image} alt={author} />
 							</figure>
 						</aside>
 					</div>
