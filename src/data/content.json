@@ -4,31 +4,37 @@
         "email" : "felipetrombini54@gmail.com",
         "linkedin" : "https://www.linkedin.com/in/felipesantostrombini/",
         "github": "https://github.com/byuufx",
-        "image" : "/portfolio-dev/trombini.webp"
+        "image" : "/trombini.webp"
     },
     "projects" : [
         {
             "name" : "DataCons",
             "url" : "https://datacons.com.br/",
-            "image" : "/portfolio-dev/datacons.webp",
+            "image" : "/datacons.webp",
             "category" : "freelance"
         },
         {
             "name" : "Diplomata",
             "url" : "https://diplomata.com.br/",
-            "image" : "/portfolio-dev/diplomata.webp",
+            "image" : "/diplomata.webp",
             "category" : "freelance"
         },
         {
             "name" : "Escola Girassol",
             "url" : "https://escolagirassol.com/",
-            "image" : "/portfolio-dev/escolagirassol.webp",
+            "image" : "/escolagirassol.webp",
             "category" : "freelance"
         },
         {
             "name" : "EPR Litoral Pioneiro",
             "url" : "https://play.google.com/store/apps/details?id=br.com.app.gpu3075278.gpu06c90c41f7b9b397a9533697fa5ddeb3&hl=pt_BR",
-            "image" : "/portfolio-dev/epr.webp",
+            "image" : "/epr.webp",
+            "category" : "tribox"
+        },
+        {
+            "name" : "Via Araucária",
+            "url" : "https://apps.apple.com/br/app/via-arauc%C3%A1ria/id6670440738",
+            "image" : "/araucaria.webp",
             "category" : "tribox"
         }
     ]

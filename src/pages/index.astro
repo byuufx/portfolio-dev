@@ -23,6 +23,10 @@ const mailto = `mailto:${email}`;
 
 const title = author + " - Portfólio";
 
+//image URL
+
+const BASE_URL = import.meta.env.MODE == 'production' ? '/portfolio-dev' : '';
+
 
 ---
 
@@ -106,7 +110,7 @@ const title = author + " - Portfólio";
 
 									<div class="col-12 col-lg-6 mb-3 py-3">
 										<a href={url} target="_blank">
-											<img src={image} alt={name} />
+											<img src={BASE_URL + image} alt={name} />
 										</a>
 									</div>
 
@@ -128,7 +132,7 @@ const title = author + " - Portfólio";
 
 									<div class="col-12 col-lg-6 mb-3 py-3">
 										<a href={url} target="_blank">
-											<img src={image} alt={name} />
+											<img src={BASE_URL + image} alt={name} />
 										</a>
 									</div>
 
@@ -151,9 +155,3 @@ const title = author + " - Portfólio";
 
 	<Footer />
 </Layout>
-
-<style>
-	main {
-		background-color: #fff;
-	}
-</style>
