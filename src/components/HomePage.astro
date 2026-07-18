@@ -25,8 +25,12 @@ const monthLabel = (ym: string) => {
   return date.toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' });
 };
 
-const freelanceProjects = projects.filter((p) => p.category === 'freelance');
-const triboxProjects = projects.filter((p) => p.category === 'tribox');
+const projectCategories = ['new-rizon', 'freelance', 'tribox'] as const;
+const projectGroups = projectCategories.map((category) => ({
+  category,
+  label: t(`projects.tab.${category}` as any),
+  items: projects.filter((p) => p.category === category),
+}));
 
 const skillGroups = [
   { label: t('skills.languages'), items: skills.languages },
@@ -220,40 +224,25 @@ const focusIcons: Record<string, string> = {
 		<section id="projects" class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('projects.heading')}</h2>
 
-			<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-				<div>
-					<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{t('projects.tab.freelance')}</p>
-					<div class="mt-4 grid grid-cols-1 gap-3">
-						{freelanceProjects.map((project) => (
-							<a
-								href={project.url}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors hover:border-copper-500/50 hover:text-copper-400"
-							>
-								<span>{project.name}</span>
-								<span aria-hidden="true" class="font-mono text-xs">&rarr;</span>
-							</a>
-						))}
+			<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+				{projectGroups.map((group) => (
+					<div>
+						<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{group.label}</p>
+						<div class="mt-4 grid grid-cols-1 gap-3">
+							{group.items.map((project) => (
+								<a
+									href={project.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors hover:border-copper-500/50 hover:text-copper-400"
+								>
+									<span>{project.name}</span>
+									<span aria-hidden="true" class="font-mono text-xs">&rarr;</span>
+								</a>
+							))}
+						</div>
 					</div>
-				</div>
-
-				<div>
-					<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{t('projects.tab.tribox')}</p>
-					<div class="mt-4 grid grid-cols-1 gap-3">
-						{triboxProjects.map((project) => (
-							<a
-								href={project.url}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors hover:border-copper-500/50 hover:text-copper-400"
-							>
-								<span>{project.name}</span>
-								<span aria-hidden="true" class="font-mono text-xs">&rarr;</span>
-							</a>
-						))}
-					</div>
-				</div>
+				))}
 			</div>
 		</section>
 

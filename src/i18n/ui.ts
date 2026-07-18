@@ -76,6 +76,7 @@ export const ui = {
     'languages.english': 'English — Advanced (TOEIC C1)',
 
     'projects.heading': 'Projects',
+    'projects.tab.new-rizon': 'New Rizon',
     'projects.tab.freelance': 'Freelance',
     'projects.tab.tribox': 'Tribox',
 
@@ -155,6 +156,7 @@ export const ui = {
     'languages.english': 'Inglês — Avançado (TOEIC C1)',
 
     'projects.heading': 'Projetos',
+    'projects.tab.new-rizon': 'New Rizon',
     'projects.tab.freelance': 'Freelance',
     'projects.tab.tribox': 'Tribox',
 
@@ -171,15 +173,12 @@ export const ui = {
 export const experienceBullets: Record<Lang, Record<string, string[]>> = {
   en: {
     'new-rizon': [
-      'Developed and maintained SaaS platform for corporate travel management',
-      'Built responsive user interfaces using Vue.js',
-      'Implemented REST APIs using Hyperf with emphasis on performance and scalability',
-      'Optimized database queries and implemented Redis caching strategies',
-      'Wrote unit tests to ensure code quality and reliability',
-      'Monitored production applications using Sentry for error tracking and performance',
-      'Containerized applications using Docker for consistent deployment',
-      'Participated in SCRUM ceremonies and agile workflows',
-      'Created technical training materials and mentored team members',
+      'Developing high-traffic features, complex routing, and modern frontends for one of the largest travel tech platforms in Latin America (Onfly) using PHP (Hyperf) and Vue.js',
+      'Engineered a 90% reduction in API route loading times through targeted performance optimization',
+      'Scaled and maintained high-traffic routes used by thousands of active users daily',
+      'Decreased frontend production bugs by over 30% by proactively monitoring and resolving Sentry alerts',
+      'Maintained a high development velocity by leveraging advanced AI tools like Claude Code for smart workflows',
+      'Utilized Mixpanel and Sentry metrics to measure feature impact and align microservices architecture with stakeholder business goals',
     ],
     tribox: [
       'Developed and maintained proprietary B2B/B2C e-commerce platform',
@@ -193,15 +192,12 @@ export const experienceBullets: Record<Lang, Record<string, string[]>> = {
   },
   pt: {
     'new-rizon': [
-      'Desenvolvimento e manutenção de plataforma SaaS para gestão de viagens corporativas',
-      'Construção de interfaces responsivas utilizando Vue.js',
-      'Implementação de APIs REST utilizando Hyperf com foco em performance e escalabilidade',
-      'Otimização de consultas ao banco de dados e implementação de cache com Redis',
-      'Escrita de testes unitários para garantir qualidade e confiabilidade do código',
-      'Monitoramento de aplicações em produção utilizando Sentry para rastreamento de erros e performance',
-      'Containerização de aplicações com Docker para deploys consistentes',
-      'Participação em cerimônias SCRUM e fluxos ágeis',
-      'Criação de materiais de treinamento técnico e mentoria de membros da equipe',
+      'Desenvolvimento de funcionalidades de alto tráfego, rotas complexas e frontends modernos para uma das maiores plataformas de travel tech da América Latina (Onfly), utilizando PHP (Hyperf) e Vue.js',
+      'Redução de 90% no tempo de carregamento de rotas de API através de otimização de performance direcionada',
+      'Escalonamento e manutenção de rotas de alto tráfego utilizadas por milhares de usuários ativos diariamente',
+      'Redução de mais de 30% nos bugs de produção do frontend através do monitoramento proativo e resolução de alertas no Sentry',
+      'Manutenção de alta velocidade de desenvolvimento utilizando ferramentas avançadas de IA, como o Claude Code, para fluxos de trabalho inteligentes',
+      'Uso de métricas do Mixpanel e Sentry para medir o impacto de funcionalidades e alinhar a arquitetura de microsserviços com os objetivos de negócio dos stakeholders',
     ],
     tribox: [
       'Desenvolvimento e manutenção de plataforma de e-commerce proprietária B2B/B2C',

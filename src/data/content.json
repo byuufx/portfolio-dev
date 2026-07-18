@@ -64,6 +64,11 @@
     "focus": ["saas", "ecommerce", "apis", "performance"],
     "projects": [
         {
+            "name": "Onfly",
+            "url": "https://www.onfly.com.br/",
+            "category": "new-rizon"
+        },
+        {
             "name": "DataCons",
             "url": "https://datacons.com.br/",
             "category": "freelance"
