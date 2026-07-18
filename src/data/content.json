@@ -69,18 +69,8 @@
             "category": "new-rizon"
         },
         {
-            "name": "DataCons",
-            "url": "https://datacons.com.br/",
-            "category": "freelance"
-        },
-        {
             "name": "Diplomata",
             "url": "https://diplomata.com.br/",
-            "category": "freelance"
-        },
-        {
-            "name": "Escola Girassol",
-            "url": "https://escolagirassol.com/",
             "category": "freelance"
         },
         {
@@ -91,6 +81,11 @@
         {
             "name": "Via Araucária",
             "url": "https://apps.apple.com/br/app/via-arauc%C3%A1ria/id6670440738",
+            "category": "tribox"
+        },
+        {
+            "name": "Ferrucci",
+            "url": "https://www.ferrucci.com.br/",
             "category": "tribox"
         }
     ]
