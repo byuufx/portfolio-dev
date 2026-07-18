@@ -31,7 +31,7 @@ export const ui = {
     'focus.heading': 'What I work on',
     'focus.title.saas': 'SaaS Platforms',
     'focus.desc.saas':
-      'Built and maintain a corporate travel management SaaS from the ground up — Vue.js interfaces, Hyperf APIs built for scale.',
+      'Working on Onfly, one of the largest corporate travel management platforms in Latin America — Vue.js interfaces, Hyperf APIs built for scale.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
       'Integrated marketplaces like Mercado Livre and ERPs like Bling and Tiny into a proprietary B2B/B2C e-commerce platform.',
@@ -114,7 +114,7 @@ export const ui = {
     'focus.heading': 'No que eu trabalho',
     'focus.title.saas': 'Plataformas SaaS',
     'focus.desc.saas':
-      'Desenvolvi e mantenho uma SaaS de gestão de viagens corporativas desde o início — interfaces em Vue.js, APIs em Hyperf pensadas para escalar.',
+      'Trabalho na Onfly, uma das maiores plataformas de gestão de viagens corporativas da América Latina — interfaces em Vue.js, APIs em Hyperf pensadas para escalar.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
       'Integrei marketplaces como o Mercado Livre e ERPs como Bling e Tiny a uma plataforma de e-commerce B2B/B2C proprietária.',
