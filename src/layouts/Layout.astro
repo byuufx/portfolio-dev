@@ -1,90 +1,64 @@
 ---
+import '../styles/global.css';
+import { Schema } from 'astro-seo-schema';
+import content from '../data/content.json';
+import { type Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
 
 interface Props {
-	title: string;
+  lang: Lang;
+  title?: string;
 }
 
-//bootstrap
-import '../styles/bootstrap.scss';
+const { lang, title } = Astro.props;
+const t = useTranslations(lang);
 
-//custom CSS
-import '../styles/custom.scss';
+const { author, linkedin, github, photo } = content.about;
 
-//schema.org
-import { Schema } from "astro-seo-schema"
-
-//dynamic data (content.json)
-import content from '../data/content.json';
-
-const { title } = Astro.props;
-
-const { author, linkedin, github, image } = content.about;
-
-const BASE_URL = import.meta.env.MODE == 'production' ? '/portfolio-dev' : '';
-
+const BASE_URL = import.meta.env.MODE === 'production' ? '/portfolio-dev' : '';
+const pageTitle = title ?? t('meta.title');
 ---
 
 <!doctype html>
-<html lang="pt-br">
+<html lang={lang === 'pt' ? 'pt-BR' : 'en'} class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		
-		<title>{title}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta name="author" content={author} >
-		<meta
-			name="description"
-			content="Confira meu portfólio. Desenvolvedor PHP apaixonado por desenvolvimento web e análise de dados. Experiência em rotinas empresariais, sistemas ERP e fluxos de trabalho de e-commerce em larga escala. Proficiente em PHP/Laravel, CSS, JavaScript e SQL. Aplicativos publicados na App Store e Play Store."
-		>
-		<meta
-			name="keywords"
-			content="desenvolvedor Jau SP, programador Jau SP,aplicativo personalizado Jau SP, desenvolvedor web, análise de dados, PHP, Laravel, CSS, JavaScript, SQL, e-commerce, ERP, desenvolvimento de software, aplicativos móveis, desenvolvedor frontend, desenvolvedor backend, portfólio de desenvolvedor, desenvolvimento web no Brasil, desenvolvedor freelance"
-		>
+		<title>{pageTitle}</title>
+		<meta name="author" content={author} />
+		<meta name="description" content={t('meta.description')} />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#0a0e1a" />
 
-		<!-- robots -->
-		<meta name="robots" content="index, follow" >
+		<link rel="icon" type="image/svg+xml" href={BASE_URL + '/favicon.svg'} />
 
-		<meta name="viewport" content="width=device-width" >
-		<link rel="icon" type="image/svg+xml" href={BASE_URL + "/favicon.svg"} />
-
-		<!-- Schema.org -->
-		<Schema
-			item={{
-				"@context": "https://schema.org",
-				"@type": "Person",
-				name: author,
-				url: Astro.request.url,
-				sameAs: [
-					linkedin,
-					github
-				],
-				image: image
-			}}
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
 		/>
 
+		<link rel="alternate" hreflang="en" href={`${Astro.site}portfolio-dev/en/`} />
+		<link rel="alternate" hreflang="pt-BR" href={`${Astro.site}portfolio-dev/pt/`} />
+		<link rel="canonical" href={`${Astro.site}portfolio-dev/${lang}/`} />
+
+		<Schema
+			item={{
+				'@context': 'https://schema.org',
+				'@type': 'Person',
+				name: author,
+				jobTitle: content.about.role,
+				url: Astro.request.url,
+				sameAs: [linkedin, github],
+				image: `${Astro.site}portfolio-dev${photo}`,
+			}}
+		/>
 	</head>
-	<body>
-		<slot />
-		<script>
-			//TODO add new scripts here
-			// Import only what you need
-			//import 'bootstrap/js/dist/alert';
-			//import 'bootstrap/js/dist/button';
-			//import 'bootstrap/js/dist/carousel';
-			import 'bootstrap/js/dist/collapse';
-			import 'bootstrap/js/dist/dropdown';
-			//import 'bootstrap/js/dist/modal';
-			//import 'bootstrap/js/dist/offcanvas';
-			//import 'bootstrap/js/dist/popover';
-			//import 'bootstrap/js/dist/scrollspy';
-			import 'bootstrap/js/dist/tab';
-			//import 'bootstrap/js/dist/toast';
-			//import 'bootstrap/js/dist/tooltip';
-		</script>
+	<body class="bg-ink-950 text-paper antialiased selection:bg-copper-500 selection:text-ink-950">
+		<div class="mx-auto max-w-5xl">
+			<slot />
+		</div>
 	</body>
 </html>
-<style is:global>
-
-	
-
-</style>

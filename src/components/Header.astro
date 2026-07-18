@@ -1,46 +1,69 @@
 ---
-interface Props {}
+import { languages, type Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
 
-const BASE_URL = import.meta.env.MODE == 'production' ? '/portfolio-dev' : '';
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const otherLang: Lang = lang === 'en' ? 'pt' : 'en';
+
+const navLinks = [
+  { href: '#about', label: t('nav.about') },
+  { href: '#experience', label: t('nav.experience') },
+  { href: '#projects', label: t('nav.projects') },
+  { href: '#contact', label: t('nav.contact') },
+];
 ---
 
-<header>
-	<header>
-		
-		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f0f0f0;">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">
-					<!-- favicon.svg -->
-					<img src={BASE_URL + "/favicon.svg"} alt="logo" width="30" height="24" class="d-inline-block align-text-top" />
-					Felipe Trombini
-				</a>
-				<button
-					class="navbar-toggler collapsed"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarNav"
-					aria-controls="navbarNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
+<header class="sticky top-0 z-20 border-b border-ink-700/60 bg-ink-950/85 backdrop-saturate-150 supports-[backdrop-filter]:backdrop-blur-sm">
+	<div class="flex items-center justify-between px-6 py-4">
+		<a href={`/${lang}/`} class="font-display text-sm font-semibold tracking-tight text-paper">
+			Felipe Trombini
+		</a>
 
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#about">Sobre</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#footer">Contato</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#projects">Projetos</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+		<nav class="hidden items-center gap-1 md:flex">
+			{navLinks.map(({ href, label }) => (
+				<a
+					href={href}
+					class="rounded-full px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-paper-muted transition-colors hover:bg-ink-800 hover:text-paper"
+				>
+					{label}
+				</a>
+			))}
+			<a
+				href={`/${otherLang}/`}
+				class="ml-2 rounded-full border border-ink-600 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-paper-muted transition-colors hover:border-copper-500 hover:text-copper-400"
+			>
+				{languages[otherLang]}
+			</a>
 		</nav>
-		
-	</header>
+
+		<details class="relative md:hidden">
+			<summary
+				class="cursor-pointer list-none rounded-full border border-ink-600 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-paper-muted"
+			>
+				Menu
+			</summary>
+			<div class="absolute right-0 top-full z-10 mt-2 w-52 rounded-2xl border border-ink-700 bg-ink-800 p-2 shadow-xl shadow-black/40">
+				{navLinks.map(({ href, label }) => (
+					<a
+						href={href}
+						class="block rounded-xl px-4 py-2 font-mono text-xs uppercase tracking-wider text-paper-muted hover:bg-ink-700 hover:text-paper"
+					>
+						{label}
+					</a>
+				))}
+				<a
+					href={`/${otherLang}/`}
+					class="block rounded-xl px-4 py-2 font-mono text-xs uppercase tracking-wider text-copper-400 hover:bg-ink-700"
+				>
+					{languages[otherLang]}
+				</a>
+			</div>
+		</details>
+	</div>
 </header>
