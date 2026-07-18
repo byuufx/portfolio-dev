@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import content from '../data/content.json';
+import { type Lang } from '../i18n/ui';
+import { useTranslations, getExperienceBullets } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const { author, role, email, linkedin, github, location, photo, resume } = content.about;
+const { skills, experience, education, certifications, projects, focus } = content;
+
+const mailto = `mailto:${email}`;
+const BASE_URL = import.meta.env.MODE === 'production' ? '/portfolio-dev' : '';
+
+const monthLabel = (ym: string) => {
+  const [year, month] = ym.split('-');
+  const date = new Date(Number(year), Number(month) - 1);
+  return date.toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' });
+};
+
+const freelanceProjects = projects.filter((p) => p.category === 'freelance');
+const triboxProjects = projects.filter((p) => p.category === 'tribox');
+
+const skillGroups = [
+  { label: t('skills.languages'), items: skills.languages },
+  { label: t('skills.frameworks'), items: skills.frameworks },
+  { label: t('skills.tools'), items: skills.tools },
+  { label: t('skills.specializations'), items: skills.specializations },
+];
+
+const focusIcons: Record<string, string> = {
+  saas: 'M4 17h16M4 12a4 4 0 0 1 4-4c.3-2 2-3.5 4-3.5s3.7 1.5 4 3.5a4 4 0 0 1 0 8H8a4 4 0 0 1-4-4Z',
+  ecommerce: 'M6 8h12l-1 11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8Zm3 0V6a3 3 0 0 1 6 0v2',
+  apis: 'M6 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM6 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm2-6h8m-8 8h4m0-4v-2',
+  performance: 'M4 14a8 8 0 1 1 16 0M4 14h16M12 14 15 9',
+};
+---
+
+<Layout lang={lang} title={`${author} — ${role}`}>
+	<Header lang={lang} />
+
+	<main>
+		<!-- Hero -->
+		<section class="grid grid-cols-1 items-center gap-12 px-6 py-16 sm:py-24 md:grid-cols-[1.2fr_0.8fr]">
+			<div>
+				<span class="inline-flex items-center gap-2 rounded-full border border-ink-600 px-3 py-1 font-mono text-xs uppercase tracking-wider text-copper-400">
+					<span class="h-1.5 w-1.5 rounded-full bg-copper-500"></span>
+					{t('hero.eyebrow')}
+				</span>
+
+				<h1 class="mt-6 font-display text-5xl font-semibold tracking-tight text-paper sm:text-6xl">
+					{author}
+				</h1>
+				<p class="mt-2 font-mono text-sm uppercase tracking-wider text-copper-400">
+					{t('hero.role')} · {t('hero.location')}
+				</p>
+
+				<p class="mt-6 max-w-xl text-lg leading-relaxed text-paper-muted">
+					{t('hero.pitch')}
+				</p>
+
+				<div class="mt-8 flex flex-wrap gap-3">
+					<a
+						href="#contact"
+						class="rounded-full bg-copper-500 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink-950 shadow-lg shadow-copper-500/20 transition-transform hover:scale-[1.03] hover:bg-copper-400"
+					>
+						{t('hero.cta.contact')}
+					</a>
+					<a
+						href={BASE_URL + resume}
+						download
+						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
+					>
+						{t('hero.cta.resume')}
+					</a>
+				</div>
+			</div>
+
+			<div class="mx-auto">
+				<div class="relative h-56 w-56 sm:h-64 sm:w-64">
+					<div class="absolute inset-0 rounded-full border-2 border-dashed border-copper-500/40"></div>
+					<img
+						src={BASE_URL + photo}
+						alt={author}
+						width="256"
+						height="256"
+						class="absolute inset-3 rounded-full border-4 border-ink-800 object-cover shadow-2xl shadow-black/50"
+					/>
+					<span class="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border-4 border-ink-950 bg-copper-500">
+						<span class="h-2.5 w-2.5 rounded-full bg-ink-950"></span>
+					</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- About + Skills -->
+		<section id="about" class="border-t border-ink-700/60 px-6 py-16">
+			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('about.heading')}</h2>
+			<div class="mt-6 grid grid-cols-1 gap-12 md:grid-cols-[1fr_1fr]">
+				<div class="space-y-4 text-lg leading-relaxed text-paper-muted">
+					<p>{t('about.summary.p1')}</p>
+					<p>{t('about.summary.p2')}</p>
+				</div>
+
+				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+					{skillGroups.map((group) => (
+						<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-4">
+							<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{group.label}</p>
+							<div class="mt-3 flex flex-wrap gap-2">
+								{group.items.map((item) => (
+									<span class="rounded-full bg-ink-700 px-3 py-1 text-sm text-paper">{item}</span>
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Focus / What I work on -->
+		<section class="border-t border-ink-700/60 px-6 py-16">
+			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('focus.heading')}</h2>
+			<div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				{focus.map((id) => (
+					<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 transition-colors hover:border-copper-500/50">
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="h-8 w-8 text-copper-400"
+						>
+							<path d={focusIcons[id]} />
+						</svg>
+						<h3 class="mt-4 font-display text-lg font-semibold text-paper">{t(`focus.title.${id}` as any)}</h3>
+						<p class="mt-2 text-sm leading-relaxed text-paper-muted">{t(`focus.desc.${id}` as any)}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Experience -->
+		<section id="experience" class="border-t border-ink-700/60 px-6 py-16">
+			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('experience.heading')}</h2>
+
+			<div class="mt-6 space-y-4">
+				{experience.map((job) => (
+					<article class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 sm:p-8">
+						<div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
+							<h3 class="font-display text-2xl font-semibold tracking-tight text-paper">{job.company}</h3>
+							<span class="w-fit rounded-full bg-ink-700 px-3 py-1 font-mono text-xs uppercase tracking-wider text-copper-400">
+								{monthLabel(job.start)} – {job.end ? monthLabel(job.end) : t('experience.present')}
+							</span>
+						</div>
+						<p class="mt-1 font-mono text-xs uppercase tracking-wider text-paper-muted">
+							{t(`experience.title.${job.id}` as any)} · {job.location}
+						</p>
+						{job.id === 'tribox' && (
+							<p class="mt-3 text-sm italic text-paper-muted">{t('experience.note.tribox')}</p>
+						)}
+						<ul class="mt-4 space-y-2 text-paper-muted">
+							{getExperienceBullets(lang, job.id).map((bullet) => (
+								<li class="flex gap-3">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-copper-500"></span>
+									<span>{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</article>
+				))}
+			</div>
+		</section>
+
+		<!-- Education & Certifications -->
+		<section class="border-t border-ink-700/60 px-6 py-16">
+			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 sm:p-8">
+					<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('education.heading')}</h2>
+					<div class="mt-6 divide-y divide-ink-700">
+						{education.map((edu) => (
+							<div class="py-4 first:pt-0 last:pb-0">
+								<p class="text-paper">{t(`education.degree.${edu.id}` as any)}</p>
+								<p class="mt-1 font-mono text-xs uppercase tracking-wider text-paper-muted">
+									{edu.institution} · {edu.start}–{edu.end}
+								</p>
+								{edu.id === 'unesp' && (
+									<p class="mt-1 text-sm italic text-paper-muted">{t('education.note.unesp')}</p>
+								)}
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 sm:p-8">
+					<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('certifications.heading')}</h2>
+					<div class="mt-6 divide-y divide-ink-700">
+						{certifications.map((cert) => (
+							<div class="py-4 first:pt-0 text-paper">{t(`certifications.name.${cert.id}` as any)}</div>
+						))}
+						<div class="py-4 last:pb-0">
+							<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{t('languages.heading')}</p>
+							<p class="mt-2 text-paper">{t('languages.portuguese')}</p>
+							<p class="mt-1 text-paper">{t('languages.english')}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Projects -->
+		<section id="projects" class="border-t border-ink-700/60 px-6 py-16">
+			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('projects.heading')}</h2>
+
+			<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
+				<div>
+					<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{t('projects.tab.freelance')}</p>
+					<div class="mt-4 grid grid-cols-1 gap-3">
+						{freelanceProjects.map((project) => (
+							<a
+								href={project.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors hover:border-copper-500/50 hover:text-copper-400"
+							>
+								<span>{project.name}</span>
+								<span aria-hidden="true" class="font-mono text-xs">&rarr;</span>
+							</a>
+						))}
+					</div>
+				</div>
+
+				<div>
+					<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{t('projects.tab.tribox')}</p>
+					<div class="mt-4 grid grid-cols-1 gap-3">
+						{triboxProjects.map((project) => (
+							<a
+								href={project.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors hover:border-copper-500/50 hover:text-copper-400"
+							>
+								<span>{project.name}</span>
+								<span aria-hidden="true" class="font-mono text-xs">&rarr;</span>
+							</a>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section id="contact" class="border-t border-ink-700/60 px-6 py-16">
+			<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-8 sm:p-12">
+				<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('contact.heading')}</h2>
+				<p class="mt-4 max-w-xl text-lg text-paper-muted">{t('contact.pitch')}</p>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<a
+						href={mailto}
+						class="rounded-full bg-copper-500 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink-950 transition-transform hover:scale-[1.03] hover:bg-copper-400"
+					>
+						{t('contact.email')}
+					</a>
+					<a
+						href={linkedin}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
+					>
+						{t('contact.linkedin')}
+					</a>
+					<a
+						href={github}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
+					>
+						{t('contact.github')}
+					</a>
+				</div>
+				<p class="mt-6 font-mono text-xs uppercase tracking-wider text-paper-muted">{location}</p>
+			</div>
+		</section>
+	</main>
+
+	<Footer lang={lang} />
+</Layout>

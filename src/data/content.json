@@ -1,41 +1,92 @@
 {
-    "about" : {
-        "author" : "Felipe Trombini",
-        "email" : "felipetrombini54@gmail.com",
-        "linkedin" : "https://www.linkedin.com/in/felipesantostrombini/",
+    "about": {
+        "author": "Felipe Trombini",
+        "role": "Full Stack Developer",
+        "email": "felipetrombini54@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/felipesantostrombini/",
         "github": "https://github.com/byuufx",
-        "image" : "/trombini.webp"
+        "location": "Jaú, São Paulo, Brazil",
+        "photo": "/trombini.webp",
+        "resume": "/felipe-trombini-cv.pdf"
     },
-    "projects" : [
+    "skills": {
+        "languages": ["PHP", "JavaScript", "SQL"],
+        "frameworks": ["Laravel", "Hyperf", "Vue.js"],
+        "tools": ["Docker", "Redis", "Git", "Sentry", "Jira", "Trello", "GitHub", "GitLab"],
+        "specializations": [
+            "REST APIs",
+            "Microservices",
+            "E-commerce",
+            "ERP Integrations",
+            "Code Optimization",
+            "Performance Tuning"
+        ]
+    },
+    "experience": [
         {
-            "name" : "DataCons",
-            "url" : "https://datacons.com.br/",
-            "image" : "/datacons.webp",
-            "category" : "freelance"
+            "id": "new-rizon",
+            "company": "New Rizon",
+            "location": "Jaú, São Paulo, Brazil",
+            "start": "2025-01",
+            "end": null
         },
         {
-            "name" : "Diplomata",
-            "url" : "https://diplomata.com.br/",
-            "image" : "/diplomata.webp",
-            "category" : "freelance"
+            "id": "tribox",
+            "company": "Tribox E-commerce",
+            "location": "Jaú, São Paulo, Brazil",
+            "start": "2021-04",
+            "end": "2024-12"
+        }
+    ],
+    "education": [
+        {
+            "id": "fatec-jau",
+            "institution": "Fatec Jaú",
+            "start": "2022",
+            "end": "2024"
         },
         {
-            "name" : "Escola Girassol",
-            "url" : "https://escolagirassol.com/",
-            "image" : "/escolagirassol.webp",
-            "category" : "freelance"
+            "id": "unesp",
+            "institution": "UNESP",
+            "start": "2020",
+            "end": "2021"
         },
         {
-            "name" : "EPR Litoral Pioneiro",
-            "url" : "https://play.google.com/store/apps/details?id=br.com.app.gpu3075278.gpu06c90c41f7b9b397a9533697fa5ddeb3&hl=pt_BR",
-            "image" : "/epr.webp",
-            "category" : "tribox"
+            "id": "etec",
+            "institution": "Etec Joaquim Ferreira do Amaral",
+            "start": "2017",
+            "end": "2019"
+        }
+    ],
+    "certifications": [
+        { "id": "toeic", "name": "TOEIC C1" }
+    ],
+    "focus": ["saas", "ecommerce", "apis", "performance"],
+    "projects": [
+        {
+            "name": "DataCons",
+            "url": "https://datacons.com.br/",
+            "category": "freelance"
         },
         {
-            "name" : "Via Araucária",
-            "url" : "https://apps.apple.com/br/app/via-arauc%C3%A1ria/id6670440738",
-            "image" : "/araucaria.webp",
-            "category" : "tribox"
+            "name": "Diplomata",
+            "url": "https://diplomata.com.br/",
+            "category": "freelance"
+        },
+        {
+            "name": "Escola Girassol",
+            "url": "https://escolagirassol.com/",
+            "category": "freelance"
+        },
+        {
+            "name": "EPR Litoral Pioneiro",
+            "url": "https://play.google.com/store/apps/details?id=br.com.app.gpu3075278.gpu06c90c41f7b9b397a9533697fa5ddeb3&hl=pt_BR",
+            "category": "tribox"
+        },
+        {
+            "name": "Via Araucária",
+            "url": "https://apps.apple.com/br/app/via-arauc%C3%A1ria/id6670440738",
+            "category": "tribox"
         }
     ]
 }
