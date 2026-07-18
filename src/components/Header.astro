@@ -10,6 +10,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const otherLang: Lang = lang === 'en' ? 'pt' : 'en';
+const BASE_URL = import.meta.env.MODE === 'production' ? '/portfolio-dev' : '';
 
 const navLinks = [
   { href: '#about', label: t('nav.about') },
@@ -21,7 +22,7 @@ const navLinks = [
 
 <header class="sticky top-0 z-20 border-b border-ink-700/60 bg-ink-950/85 backdrop-saturate-150 supports-[backdrop-filter]:backdrop-blur-sm">
 	<div class="flex items-center justify-between px-6 py-4">
-		<a href={`/${lang}/`} class="font-display text-sm font-semibold tracking-tight text-paper">
+		<a href={`${BASE_URL}/${lang}/`} class="font-display text-sm font-semibold tracking-tight text-paper">
 			Felipe Trombini
 		</a>
 
@@ -35,7 +36,7 @@ const navLinks = [
 				</a>
 			))}
 			<a
-				href={`/${otherLang}/`}
+				href={`${BASE_URL}/${otherLang}/`}
 				class="ml-2 rounded-full border border-ink-600 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-paper-muted transition-colors hover:border-copper-500 hover:text-copper-400"
 			>
 				{languages[otherLang]}
@@ -58,7 +59,7 @@ const navLinks = [
 					</a>
 				))}
 				<a
-					href={`/${otherLang}/`}
+					href={`${BASE_URL}/${otherLang}/`}
 					class="block rounded-xl px-4 py-2 font-mono text-xs uppercase tracking-wider text-copper-400 hover:bg-ink-700"
 				>
 					{languages[otherLang]}
