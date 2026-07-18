@@ -7,7 +7,10 @@
         "github": "https://github.com/byuufx",
         "location": "Jaú, São Paulo, Brazil",
         "photo": "/trombini.webp",
-        "resume": "/felipe-trombini-cv.pdf"
+        "resume": {
+            "en": "/felipe-trombini-cv-en.pdf",
+            "pt": "/felipe-trombini-cv-pt.pdf"
+        }
     },
     "skills": {
         "languages": ["PHP", "JavaScript", "SQL"],
@@ -61,11 +64,16 @@
     "certifications": [
         { "id": "toeic", "name": "TOEIC C1" }
     ],
-    "focus": ["saas", "ecommerce", "apis", "performance"],
+    "focus": ["saas", "ecommerce", "apis", "performance", "ai"],
     "projects": [
         {
             "name": "Onfly",
             "url": "https://www.onfly.com.br/",
+            "category": "new-rizon"
+        },
+        {
+            "name": "Hyperf + RAG Embeddings POC",
+            "url": "https://gitlab.com/byuufx/hyperf-embeddings-test",
             "category": "new-rizon"
         },
         {

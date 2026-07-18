@@ -41,6 +41,9 @@ export const ui = {
     'focus.title.performance': 'Performance & Reliability',
     'focus.desc.performance':
       'Redis caching, query optimization, and Sentry monitoring — the unglamorous work that keeps production fast and honest.',
+    'focus.title.ai': 'Applied AI & RAG',
+    'focus.desc.ai':
+      'Built and presented an internal proof-of-concept on embedding generation and Retrieval-Augmented Generation using Hyperf and the OpenAI API — open source, linked below.',
 
     'about.heading': 'About',
     'about.summary.p1':
@@ -121,6 +124,9 @@ export const ui = {
     'focus.title.performance': 'Performance & Confiabilidade',
     'focus.desc.performance':
       'Cache com Redis, otimização de queries e monitoramento com Sentry — o trabalho pouco glamouroso que mantém a produção rápida e honesta.',
+    'focus.title.ai': 'IA Aplicada & RAG',
+    'focus.desc.ai':
+      'Desenvolvi e apresentei uma prova de conceito interna sobre geração de embeddings e RAG (Retrieval-Augmented Generation) utilizando Hyperf e a API da OpenAI — código aberto, link abaixo.',
 
     'about.heading': 'Sobre',
     'about.summary.p1':
@@ -179,6 +185,7 @@ export const experienceBullets: Record<Lang, Record<string, string[]>> = {
       'Decreased frontend production bugs by over 30% by proactively monitoring and resolving Sentry alerts',
       'Maintained a high development velocity by leveraging advanced AI tools like Claude Code for smart workflows',
       'Utilized Mixpanel and Sentry metrics to measure feature impact and align microservices architecture with stakeholder business goals',
+      'Presented an internal proof-of-concept on embedding generation and Retrieval-Augmented Generation (RAG) using Hyperf and the OpenAI API, then open-sourced it for the team',
     ],
     tribox: [
       'Developed and maintained proprietary B2B/B2C e-commerce platform',
@@ -198,6 +205,7 @@ export const experienceBullets: Record<Lang, Record<string, string[]>> = {
       'Redução de mais de 30% nos bugs de produção do frontend através do monitoramento proativo e resolução de alertas no Sentry',
       'Manutenção de alta velocidade de desenvolvimento utilizando ferramentas avançadas de IA, como o Claude Code, para fluxos de trabalho inteligentes',
       'Uso de métricas do Mixpanel e Sentry para medir o impacto de funcionalidades e alinhar a arquitetura de microsserviços com os objetivos de negócio dos stakeholders',
+      'Apresentou uma prova de conceito interna sobre geração de embeddings e RAG (Retrieval-Augmented Generation) utilizando Hyperf e a API da OpenAI, disponibilizando o projeto como open source para a equipe',
     ],
     tribox: [
       'Desenvolvimento e manutenção de plataforma de e-commerce proprietária B2B/B2C',

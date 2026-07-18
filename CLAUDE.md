@@ -60,9 +60,12 @@ closest thing to a correctness check — run it after changes to `.astro` or `.t
   Astro does not rewrite paths for files referenced from `public/`. Follow the same pattern
   (recomputed per-file, matching the existing style) if a new static asset is added.
 - **Static assets in `public/`**: `favicon.svg`, `trombini.webp` (profile photo, used in the hero
-  avatar and the schema.org `image`), and `felipe-trombini-cv.pdf` (the "Download CV" link target).
-  This is a deliberate, small set — don't add project screenshots or decorative imagery; the photo
-  and résumé are the only content assets, everything else is typographic/card-based.
+  avatar and the schema.org `image`), and two résumé PDFs — `felipe-trombini-cv-en.pdf` /
+  `felipe-trombini-cv-pt.pdf`. `content.json`'s `about.resume` is `{ en, pt }`; the "Download CV"
+  button in `HomePage.astro` picks `resume[lang]` so each locale downloads its own language CV —
+  keep both files in sync when the résumé content changes. This is a deliberate, small asset set —
+  don't add project screenshots or decorative imagery; the photo and résumés are the only content
+  assets, everything else is typographic/card-based.
 - **SEO**: `Layout.astro` renders a schema.org `Person` JSON-LD block via `astro-seo-schema`
   (v7, matching Astro v7 — do not downgrade), sourced from `content.json`'s `about` data
   (including `image`, pointed at the production URL of `trombini.webp`), plus `hreflang`

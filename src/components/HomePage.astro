@@ -18,6 +18,7 @@ const { skills, experience, education, certifications, projects, focus } = conte
 
 const mailto = `mailto:${email}`;
 const BASE_URL = import.meta.env.MODE === 'production' ? '/portfolio-dev' : '';
+const resumeHref = BASE_URL + resume[lang];
 
 const monthLabel = (ym: string) => {
   const [year, month] = ym.split('-');
@@ -44,6 +45,7 @@ const focusIcons: Record<string, string> = {
   ecommerce: 'M6 8h12l-1 11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8Zm3 0V6a3 3 0 0 1 6 0v2',
   apis: 'M6 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM6 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm2-6h8m-8 8h4m0-4v-2',
   performance: 'M4 14a8 8 0 1 1 16 0M4 14h16M12 14 15 9',
+  ai: 'M13 3 5 14h5l-1 8 8-11h-5l1-8Z',
 };
 ---
 
@@ -78,7 +80,7 @@ const focusIcons: Record<string, string> = {
 						{t('hero.cta.contact')}
 					</a>
 					<a
-						href={BASE_URL + resume}
+						href={resumeHref}
 						download
 						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
 					>
@@ -131,7 +133,7 @@ const focusIcons: Record<string, string> = {
 		<!-- Focus / What I work on -->
 		<section class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('focus.heading')}</h2>
-			<div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+			<div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{focus.map((id) => (
 					<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 transition-colors hover:border-copper-500/50">
 						<svg
