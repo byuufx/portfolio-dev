@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import HeroCanvas from './HeroCanvas.astro';
 import content from '../data/content.json';
 import { type Lang } from '../i18n/ui';
 import { useTranslations, getExperienceBullets } from '../i18n/utils';
@@ -54,54 +55,59 @@ const focusIcons: Record<string, string> = {
 
 	<main>
 		<!-- Hero -->
-		<section class="grid grid-cols-1 items-center gap-12 px-6 py-16 sm:py-24 md:grid-cols-[1.2fr_0.8fr]">
-			<div>
-				<span class="inline-flex items-center gap-2 rounded-full border border-ink-600 px-3 py-1 font-mono text-xs uppercase tracking-wider text-copper-400">
-					<span class="h-1.5 w-1.5 rounded-full bg-copper-500"></span>
-					{t('hero.eyebrow')}
-				</span>
-
-				<h1 class="mt-6 font-display text-5xl font-semibold tracking-tight text-paper sm:text-6xl">
-					{author}
-				</h1>
-				<p class="mt-2 font-mono text-sm uppercase tracking-wider text-copper-400">
-					{t('hero.role')} · {t('hero.location')}
-				</p>
-
-				<p class="mt-6 max-w-xl text-lg leading-relaxed text-paper-muted">
-					{t('hero.pitch')}
-				</p>
-
-				<div class="mt-8 flex flex-wrap gap-3">
-					<a
-						href="#contact"
-						class="rounded-full bg-copper-500 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink-950 shadow-lg shadow-copper-500/20 transition-transform hover:scale-[1.03] hover:bg-copper-400"
-					>
-						{t('hero.cta.contact')}
-					</a>
-					<a
-						href={resumeHref}
-						download
-						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
-					>
-						{t('hero.cta.resume')}
-					</a>
-				</div>
-			</div>
-
-			<div class="mx-auto">
-				<div class="relative h-56 w-56 sm:h-64 sm:w-64">
-					<div class="absolute inset-0 rounded-full border-2 border-dashed border-copper-500/40"></div>
-					<img
-						src={BASE_URL + photo}
-						alt={author}
-						width="256"
-						height="256"
-						class="absolute inset-3 rounded-full border-4 border-ink-800 object-cover shadow-2xl shadow-black/50"
-					/>
-					<span class="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border-4 border-ink-950 bg-copper-500">
-						<span class="h-2.5 w-2.5 rounded-full bg-ink-950"></span>
+		<section class="relative isolate overflow-hidden">
+			<div class="grid grid-cols-1 items-center gap-12 px-6 pb-24 pt-14 sm:pb-32 sm:pt-20 md:grid-cols-[7fr_5fr]">
+				<div>
+					<span class="inline-flex items-center gap-2 rounded-full border border-ink-600 bg-ink-950/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-copper-400 backdrop-blur-sm">
+						<span class="h-1.5 w-1.5 rounded-full bg-copper-500"></span>
+						{t('hero.eyebrow')}
 					</span>
+
+					<h1 class="mt-6 font-display text-5xl font-semibold tracking-tight text-paper sm:text-6xl">
+						{author}
+					</h1>
+					<p class="mt-2 font-mono text-sm uppercase tracking-wider text-copper-400">
+						{t('hero.role')} · {t('hero.location')}
+					</p>
+
+					<p class="mt-6 max-w-xl text-lg leading-relaxed text-paper-muted">
+						{t('hero.pitch')}
+					</p>
+
+					<div class="mt-8 flex flex-wrap gap-3">
+						<a
+							href="#contact"
+							class="rounded-full bg-copper-500 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink-950 shadow-lg shadow-copper-500/20 transition-transform duration-150 hover:scale-[1.03] hover:bg-copper-400"
+						>
+							{t('hero.cta.contact')}
+						</a>
+						<a
+							href={resumeHref}
+							download
+							class="rounded-full border border-ink-600 bg-ink-950/40 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper backdrop-blur-sm transition-colors duration-150 hover:border-copper-500 hover:text-copper-400"
+						>
+							{t('hero.cta.resume')}
+						</a>
+					</div>
+				</div>
+
+				<div class="mx-auto flex flex-col items-center">
+					<div class="relative h-56 w-56 sm:h-64 sm:w-64">
+						<img
+							src={BASE_URL + photo}
+							alt={author}
+							width="256"
+							height="256"
+							class="absolute inset-0 rounded-full border-4 border-ink-800 object-cover shadow-2xl shadow-black/50"
+						/>
+						<span class="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border-4 border-ink-950 bg-copper-500">
+							<span class="h-2.5 w-2.5 rounded-full bg-ink-950"></span>
+						</span>
+					</div>
+
+					<div class="relative mt-2 h-36 w-56 sm:h-40 sm:w-64">
+						<HeroCanvas />
+					</div>
 				</div>
 			</div>
 		</section>
@@ -109,7 +115,7 @@ const focusIcons: Record<string, string> = {
 		<!-- About + Skills -->
 		<section id="about" class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('about.heading')}</h2>
-			<div class="mt-6 grid grid-cols-1 gap-12 md:grid-cols-[1fr_1fr]">
+			<div class="mt-6 grid grid-cols-1 gap-12 md:grid-cols-[7fr_5fr]">
 				<div class="space-y-4 text-lg leading-relaxed text-paper-muted">
 					<p>{t('about.summary.p1')}</p>
 					<p>{t('about.summary.p2')}</p>
@@ -134,8 +140,13 @@ const focusIcons: Record<string, string> = {
 		<section class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('focus.heading')}</h2>
 			<div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-				{focus.map((id) => (
-					<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 transition-colors hover:border-copper-500/50">
+				{focus.map((id, index) => (
+					<div
+						class:list={[
+							'rounded-2xl border border-ink-700 bg-ink-800/60 p-6 transition-colors duration-150 hover:border-copper-500/50',
+							index === 0 && 'lg:col-span-2',
+						]}
+					>
 						<svg
 							viewBox="0 0 24 24"
 							fill="none"
@@ -148,7 +159,7 @@ const focusIcons: Record<string, string> = {
 							<path d={focusIcons[id]} />
 						</svg>
 						<h3 class="mt-4 font-display text-lg font-semibold text-paper">{t(`focus.title.${id}` as any)}</h3>
-						<p class="mt-2 text-sm leading-relaxed text-paper-muted">{t(`focus.desc.${id}` as any)}</p>
+						<p class="mt-2 max-w-md text-sm leading-relaxed text-paper-muted">{t(`focus.desc.${id}` as any)}</p>
 					</div>
 				))}
 			</div>
@@ -158,9 +169,11 @@ const focusIcons: Record<string, string> = {
 		<section id="experience" class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('experience.heading')}</h2>
 
-			<div class="mt-6 space-y-4">
+			<div class="relative mt-10 space-y-10 border-l border-ink-700 pl-8 sm:pl-10">
 				{experience.map((job) => (
-					<article class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 sm:p-8">
+					<article class="relative">
+						<span class="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-copper-500 ring-4 ring-ink-950 sm:-left-[calc(2.5rem+5px)]"></span>
+
 						<div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
 							<h3 class="font-display text-2xl font-semibold tracking-tight text-paper">{job.company}</h3>
 							<span class="w-fit rounded-full bg-ink-700 px-3 py-1 font-mono text-xs uppercase tracking-wider text-copper-400">
@@ -236,10 +249,10 @@ const focusIcons: Record<string, string> = {
 									href={project.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors hover:border-copper-500/50 hover:text-copper-400"
+									class="group flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors duration-150 hover:border-copper-500/50 hover:text-copper-400"
 								>
 									<span>{project.name}</span>
-									<span aria-hidden="true" class="font-mono text-xs">&rarr;</span>
+									<span aria-hidden="true" class="font-mono text-xs transition-transform duration-150 group-hover:translate-x-0.5">&rarr;</span>
 								</a>
 							))}
 						</div>

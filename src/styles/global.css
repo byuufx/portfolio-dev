@@ -17,6 +17,10 @@
   --color-copper-400: #ecad78;
   --color-copper-500: #e58a45;
   --color-copper-600: #c96f31;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 html {
@@ -30,4 +34,14 @@ body {
 ::selection {
   background-color: var(--color-copper-500);
   color: var(--color-ink-950);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 150ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+  }
 }
