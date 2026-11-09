@@ -15,7 +15,7 @@ const t = useTranslations(lang);
 
 const { author, linkedin, github, photo } = content.about;
 
-const BASE_URL = import.meta.env.MODE === 'production' ? '/portfolio-dev' : '';
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pageTitle = title ?? t('meta.title');
 ---
 
@@ -40,9 +40,9 @@ const pageTitle = title ?? t('meta.title');
 			rel="stylesheet"
 		/>
 
-		<link rel="alternate" hreflang="en" href={`${Astro.site}portfolio-dev/en/`} />
-		<link rel="alternate" hreflang="pt-BR" href={`${Astro.site}portfolio-dev/pt/`} />
-		<link rel="canonical" href={`${Astro.site}portfolio-dev/${lang}/`} />
+		<link rel="alternate" hreflang="en" href={`${Astro.site}en/`} />
+		<link rel="alternate" hreflang="pt-BR" href={`${Astro.site}pt/`} />
+		<link rel="canonical" href={`${Astro.site}${lang}/`} />
 
 		<Schema
 			item={{
@@ -52,7 +52,7 @@ const pageTitle = title ?? t('meta.title');
 				jobTitle: content.about.role,
 				url: Astro.request.url,
 				sameAs: [linkedin, github],
-				image: `${Astro.site}portfolio-dev${photo}`,
+				image: `${String(Astro.site).replace(/\/$/, '')}${photo}`,
 			}}
 		/>
 	</head>
