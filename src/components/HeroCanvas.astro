@@ -12,71 +12,95 @@
 	const container = canvas?.parentElement;
 	if (!canvas || !container) throw new Error('hero canvas not found');
 
+	const isMobile = window.matchMedia('(max-width: 767px)').matches;
 	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	const scene = new THREE.Scene();
-	const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-	camera.position.set(0, 0, 7.5);
+	const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+	camera.position.set(0, 0, 8);
 
-	const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+	const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
+	renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
 
 	const copper = new THREE.Color('#e58a45');
 	const copperDim = new THREE.Color('#c96f31');
 
+	// Orbital group — icosahedron + orbital particles, shifted to right
+	const orbitalGroup = new THREE.Group();
+	orbitalGroup.position.set(isMobile ? 0 : 3.5, 0.5, 0);
+
 	const core = new THREE.Mesh(
 		new THREE.IcosahedronGeometry(1.3, 1),
-		new THREE.MeshBasicMaterial({ color: copper, wireframe: true, transparent: true, opacity: 0.32 }),
+		new THREE.MeshBasicMaterial({ color: copper, wireframe: true, transparent: true, opacity: 0.18 }),
 	);
-	scene.add(core);
+	orbitalGroup.add(core);
 
 	const innerCore = new THREE.Mesh(
 		new THREE.IcosahedronGeometry(0.8, 0),
-		new THREE.MeshBasicMaterial({ color: copperDim, wireframe: true, transparent: true, opacity: 0.16 }),
+		new THREE.MeshBasicMaterial({ color: copperDim, wireframe: true, transparent: true, opacity: 0.09 }),
 	);
-	scene.add(innerCore);
+	orbitalGroup.add(innerCore);
 
-	const POINT_COUNT = 26;
-	const points: THREE.Vector3[] = [];
-	for (let i = 0; i < POINT_COUNT; i++) {
-		const radius = 2 + Math.random() * 1;
+	const ORBITAL_COUNT = 26;
+	const orbitalPositions: THREE.Vector3[] = [];
+	for (let i = 0; i < ORBITAL_COUNT; i++) {
+		const r = 2 + Math.random();
 		const theta = Math.random() * Math.PI * 2;
 		const phi = Math.acos(Math.random() * 2 - 1);
-		points.push(
+		orbitalPositions.push(
 			new THREE.Vector3(
-				radius * Math.sin(phi) * Math.cos(theta),
-				radius * Math.sin(phi) * Math.sin(theta),
-				radius * Math.cos(phi),
+				r * Math.sin(phi) * Math.cos(theta),
+				r * Math.sin(phi) * Math.sin(theta),
+				r * Math.cos(phi),
 			),
 		);
 	}
 
-	const dots = new THREE.Points(
-		new THREE.BufferGeometry().setFromPoints(points),
-		new THREE.PointsMaterial({ color: copper, size: 0.04, transparent: true, opacity: 0.45 }),
+	orbitalGroup.add(
+		new THREE.Points(
+			new THREE.BufferGeometry().setFromPoints(orbitalPositions),
+			new THREE.PointsMaterial({ color: copper, size: 0.04, transparent: true, opacity: 0.3 }),
+		),
 	);
-	scene.add(dots);
 
 	const linePositions: number[] = [];
-	const LINK_DISTANCE = 1.5;
-	for (let i = 0; i < points.length; i++) {
-		for (let j = i + 1; j < points.length; j++) {
-			if (points[i].distanceTo(points[j]) < LINK_DISTANCE) {
-				linePositions.push(points[i].x, points[i].y, points[i].z, points[j].x, points[j].y, points[j].z);
+	for (let i = 0; i < orbitalPositions.length; i++) {
+		for (let j = i + 1; j < orbitalPositions.length; j++) {
+			if (orbitalPositions[i].distanceTo(orbitalPositions[j]) < 1.5) {
+				linePositions.push(
+					orbitalPositions[i].x, orbitalPositions[i].y, orbitalPositions[i].z,
+					orbitalPositions[j].x, orbitalPositions[j].y, orbitalPositions[j].z,
+				);
 			}
 		}
 	}
-	const lineGeometry = new THREE.BufferGeometry();
-	lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-	const links = new THREE.LineSegments(
-		lineGeometry,
-		new THREE.LineBasicMaterial({ color: copperDim, transparent: true, opacity: 0.08 }),
+	const lineGeo = new THREE.BufferGeometry();
+	lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+	orbitalGroup.add(
+		new THREE.LineSegments(
+			lineGeo,
+			new THREE.LineBasicMaterial({ color: copperDim, transparent: true, opacity: 0.06 }),
+		),
 	);
-	scene.add(links);
 
-	const group = new THREE.Group();
-	group.add(core, innerCore, dots, links);
-	scene.add(group);
+	// Ambient particle field spread across the full canvas width
+	const AMBIENT_COUNT = isMobile ? 22 : 65;
+	const ambientPos: number[] = [];
+	for (let i = 0; i < AMBIENT_COUNT; i++) {
+		ambientPos.push(
+			(Math.random() - 0.5) * 18,
+			(Math.random() - 0.5) * 10,
+			(Math.random() - 0.5) * 6,
+		);
+	}
+	const ambientGeo = new THREE.BufferGeometry();
+	ambientGeo.setAttribute('position', new THREE.Float32BufferAttribute(ambientPos, 3));
+	const ambientDots = new THREE.Points(
+		ambientGeo,
+		new THREE.PointsMaterial({ color: copper, size: 0.025, transparent: true, opacity: 0.18 }),
+	);
+
+	scene.add(ambientDots, orbitalGroup);
 
 	function resize() {
 		if (!container || !canvas) return;
@@ -88,6 +112,18 @@
 	resize();
 	window.addEventListener('resize', resize);
 
+	let mouseX = 0;
+	let mouseY = 0;
+	let lerpX = 0;
+	let lerpY = 0;
+
+	if (!prefersReducedMotion && !isMobile) {
+		window.addEventListener('mousemove', (e) => {
+			mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+			mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+		});
+	}
+
 	let frameId = 0;
 	let visible = true;
 	const observer = new IntersectionObserver(([entry]) => {
@@ -98,15 +134,23 @@
 	function tick(time: number) {
 		frameId = requestAnimationFrame(tick);
 		if (!visible) return;
-		const t = time * 0.00006;
-		group.rotation.y = t;
-		group.rotation.x = Math.sin(t * 0.6) * 0.15;
+
+		const t = time * 0.00005;
+
+		lerpX += (mouseX - lerpX) * 0.04;
+		lerpY += (mouseY - lerpY) * 0.04;
+
+		orbitalGroup.rotation.y = t + lerpX * 0.5;
+		orbitalGroup.rotation.x = Math.sin(t * 0.5) * 0.12 - lerpY * 0.35;
+
+		ambientDots.rotation.y = t * 0.08;
+
 		renderer.render(scene, camera);
 	}
 
 	if (prefersReducedMotion) {
-		group.rotation.y = 0.4;
-		group.rotation.x = 0.15;
+		orbitalGroup.rotation.y = 0.4;
+		orbitalGroup.rotation.x = 0.1;
 		resize();
 		renderer.render(scene, camera);
 	} else {
@@ -122,13 +166,20 @@
 		inset: 0;
 		z-index: 0;
 		pointer-events: none;
-		mask-image: radial-gradient(ellipse 65% 80% at 50% 30%, black 45%, transparent 90%);
-		-webkit-mask-image: radial-gradient(ellipse 65% 80% at 50% 30%, black 45%, transparent 90%);
+		mask-image: radial-gradient(ellipse 85% 100% at 68% 50%, black 20%, transparent 78%);
+		-webkit-mask-image: radial-gradient(ellipse 85% 100% at 68% 50%, black 20%, transparent 78%);
 	}
 
 	.hero-canvas canvas {
 		width: 100%;
 		height: 100%;
 		display: block;
+	}
+
+	@media (max-width: 767px) {
+		.hero-canvas {
+			mask-image: radial-gradient(ellipse 100% 80% at 50% 60%, black 20%, transparent 80%);
+			-webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 60%, black 20%, transparent 80%);
+		}
 	}
 </style>

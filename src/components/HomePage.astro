@@ -56,7 +56,8 @@ const focusIcons: Record<string, string> = {
 	<main>
 		<!-- Hero -->
 		<section class="relative isolate overflow-hidden">
-			<div class="grid grid-cols-1 items-center gap-12 px-6 pb-24 pt-14 sm:pb-32 sm:pt-20 md:grid-cols-[7fr_5fr]">
+			<HeroCanvas />
+			<div class="relative z-10 grid grid-cols-1 items-center gap-12 px-6 pb-24 pt-14 sm:pb-32 sm:pt-20 md:grid-cols-[7fr_5fr]">
 				<div>
 					<span class="inline-flex items-center gap-2 rounded-full border border-ink-600 bg-ink-950/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-copper-400 backdrop-blur-sm">
 						<span class="h-1.5 w-1.5 rounded-full bg-copper-500"></span>
@@ -74,7 +75,13 @@ const focusIcons: Record<string, string> = {
 						{t('hero.pitch')}
 					</p>
 
-					<div class="mt-8 flex flex-wrap gap-3">
+					<div class="mt-4 flex flex-wrap gap-3">
+						<span class="font-mono text-[10px] uppercase tracking-widest text-paper-muted/35">[SYS::ONLINE]</span>
+						<span class="font-mono text-[10px] uppercase tracking-widest text-paper-muted/35">[ENV // PROD]</span>
+						<span class="font-mono text-[10px] uppercase tracking-widest text-paper-muted/35">[LOC // SP-BR]</span>
+					</div>
+
+					<div class="mt-6 flex flex-wrap gap-3">
 						<a
 							href="#contact"
 							class="rounded-full bg-copper-500 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink-950 shadow-lg shadow-copper-500/20 transition-transform duration-150 hover:scale-[1.03] hover:bg-copper-400"
@@ -103,10 +110,6 @@ const focusIcons: Record<string, string> = {
 						<span class="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border-4 border-ink-950 bg-copper-500">
 							<span class="h-2.5 w-2.5 rounded-full bg-ink-950"></span>
 						</span>
-					</div>
-
-					<div class="relative mt-2 h-36 w-56 sm:h-40 sm:w-64">
-						<HeroCanvas />
 					</div>
 				</div>
 			</div>
@@ -249,6 +252,7 @@ const focusIcons: Record<string, string> = {
 									href={project.url}
 									target="_blank"
 									rel="noopener noreferrer"
+									data-tilt
 									class="group flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors duration-150 hover:border-copper-500/50 hover:text-copper-400"
 								>
 									<span>{project.name}</span>
@@ -297,3 +301,22 @@ const focusIcons: Record<string, string> = {
 
 	<Footer lang={lang} />
 </Layout>
+
+<script>
+	const isMobile = window.matchMedia('(max-width: 767px)').matches;
+	if (!isMobile) {
+		document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((card) => {
+			card.addEventListener('mousemove', (e) => {
+				const rect = card.getBoundingClientRect();
+				const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+				const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+				card.style.transition = 'transform 0.06s linear, border-color 0.15s, color 0.15s';
+				card.style.transform = `perspective(800px) rotateY(${x * 7}deg) rotateX(${-y * 5}deg) scale3d(1.02, 1.02, 1.02)`;
+			});
+			card.addEventListener('mouseleave', () => {
+				card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s, color 0.15s';
+				card.style.transform = '';
+			});
+		});
+	}
+</script>
