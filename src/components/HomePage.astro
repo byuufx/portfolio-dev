@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import DinoCanvas from './DinoCanvas.astro';
 import HeroCanvas from './HeroCanvas.astro';
 import ProjectCarousel from './ProjectCarousel.astro';
 import content from '../data/content.json';
@@ -291,6 +292,9 @@ const focusIcons: Record<string, string> = {
 		</section>
 	</main>
 
+	<div class="flex justify-center border-t border-ink-700/40 pt-4">
+		<DinoCanvas />
+	</div>
 	<Footer lang={lang} />
 </Layout>
 

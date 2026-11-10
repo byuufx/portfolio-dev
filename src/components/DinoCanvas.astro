@@ -1,0 +1,263 @@
+---
+---
+
+<div class="dino-canvas-wrap" aria-hidden="true">
+	<canvas id="dino-canvas"></canvas>
+</div>
+
+<script>
+	import * as THREE from 'three';
+
+	const canvas = document.getElementById('dino-canvas') as HTMLCanvasElement | null;
+	const container = canvas?.parentElement;
+	if (!canvas || !container) throw new Error('dino canvas not found');
+
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	const scene = new THREE.Scene();
+	const camera = new THREE.OrthographicCamera(-8, 8, 4, -4, 0.1, 100);
+	camera.position.set(0, 0, 10);
+
+	const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+	renderer.setPixelRatio(1);
+
+	function resize() {
+		const w = container!.clientWidth;
+		const h = container!.clientHeight;
+		const aspect = w / h;
+		const frustumH = 4;
+		const frustumW = frustumH * aspect;
+		camera.left = -frustumW;
+		camera.right = frustumW;
+		camera.top = frustumH;
+		camera.bottom = -frustumH;
+		camera.updateProjectionMatrix();
+		renderer.setSize(w, h, false);
+	}
+	resize();
+	window.addEventListener('resize', resize);
+
+	// ── colour palette ───────────────────────────────────────────────
+	const C = {
+		body:    0x4caf74,   // medium green
+		dark:    0x357a52,   // shadow green
+		belly:   0xc8e6b2,   // light belly
+		eye:     0xffffff,
+		pupil:   0x0a0e1a,   // ink-950
+		copper:  0xe58a45,
+		spot:    0x357a52,
+	};
+
+	function box(w: number, h: number, d: number, col: number) {
+		return new THREE.Mesh(
+			new THREE.BoxGeometry(w, h, d),
+			new THREE.MeshBasicMaterial({ color: col }),
+		);
+	}
+
+	// ── dino body parts ──────────────────────────────────────────────
+	const dino = new THREE.Group();
+
+	// torso
+	const torso = box(1.6, 1.2, 0.8, C.body);
+	torso.position.set(0, 0, 0);
+	dino.add(torso);
+
+	// belly patch
+	const belly = box(0.9, 0.7, 0.81, C.belly);
+	belly.position.set(0, -0.1, 0);
+	dino.add(belly);
+
+	// neck
+	const neck = box(0.7, 0.6, 0.7, C.body);
+	neck.position.set(0.3, 0.75, 0);
+	dino.add(neck);
+
+	// head
+	const head = new THREE.Group();
+	const headBox = box(1.1, 0.9, 0.9, C.body);
+	head.add(headBox);
+
+	// snout
+	const snout = box(0.6, 0.5, 0.75, C.dark);
+	snout.position.set(0.75, -0.08, 0);
+	head.add(snout);
+
+	// nostril dots
+	const nostril1 = box(0.1, 0.1, 0.76, C.pupil);
+	nostril1.position.set(1.0, 0.04, 0.12);
+	head.add(nostril1);
+	const nostril2 = box(0.1, 0.1, 0.76, C.pupil);
+	nostril2.position.set(1.0, 0.04, -0.12);
+	head.add(nostril2);
+
+	// eye white
+	const eyeWhite = box(0.28, 0.28, 0.91, C.eye);
+	eyeWhite.position.set(0.28, 0.2, 0.3);
+	head.add(eyeWhite);
+	// pupil
+	const pupil = box(0.14, 0.14, 0.92, C.pupil);
+	pupil.position.set(0.35, 0.18, 0.3);
+	head.add(pupil);
+	// shine dot
+	const shine = box(0.07, 0.07, 0.93, C.eye);
+	shine.position.set(0.38, 0.22, 0.3);
+	head.add(shine);
+
+	// small copper "freckle" spot above eye
+	const freckle = box(0.1, 0.1, 0.91, C.copper);
+	freckle.position.set(0.1, 0.42, 0.42);
+	head.add(freckle);
+
+	head.position.set(0.9, 1.1, 0);
+	dino.add(head);
+
+	// tail
+	const tail1 = box(0.8, 0.6, 0.65, C.body);
+	tail1.position.set(-1.1, -0.1, 0);
+	dino.add(tail1);
+	const tail2 = box(0.5, 0.42, 0.5, C.dark);
+	tail2.position.set(-1.75, -0.3, 0);
+	dino.add(tail2);
+	const tail3 = box(0.3, 0.26, 0.38, C.body);
+	tail3.position.set(-2.2, -0.48, 0);
+	dino.add(tail3);
+
+	// back spines (copper)
+	const spinePositions = [-0.5, 0, 0.4, 0.75];
+	for (const sx of spinePositions) {
+		const spine = box(0.18, 0.28, 0.14, C.copper);
+		spine.position.set(sx, 0.74, 0);
+		dino.add(spine);
+	}
+
+	// legs
+	const legGroup = new THREE.Group();
+
+	const legFL = box(0.42, 0.7, 0.42, C.dark);
+	legFL.position.set(0.4, -0.95, 0.22);
+	legGroup.add(legFL);
+	const footFL = box(0.52, 0.22, 0.42, C.body);
+	footFL.position.set(0.46, -1.42, 0.22);
+	legGroup.add(footFL);
+
+	const legFR = box(0.42, 0.7, 0.42, C.dark);
+	legFR.position.set(0.4, -0.95, -0.22);
+	legGroup.add(legFR);
+	const footFR = box(0.52, 0.22, 0.42, C.body);
+	footFR.position.set(0.46, -1.42, -0.22);
+	legGroup.add(footFR);
+
+	const legBL = box(0.42, 0.7, 0.42, C.dark);
+	legBL.position.set(-0.4, -0.95, 0.22);
+	legGroup.add(legBL);
+	const footBL = box(0.52, 0.22, 0.42, C.body);
+	footBL.position.set(-0.34, -1.42, 0.22);
+	legGroup.add(footBL);
+
+	const legBR = box(0.42, 0.7, 0.42, C.dark);
+	legBR.position.set(-0.4, -0.95, -0.22);
+	legGroup.add(legBR);
+	const footBR = box(0.52, 0.22, 0.42, C.body);
+	footBR.position.set(-0.34, -1.42, -0.22);
+	legGroup.add(footBR);
+
+	// tiny arms
+	const armL = box(0.28, 0.42, 0.28, C.dark);
+	armL.position.set(0.75, 0.1, 0.42);
+	dino.add(armL);
+	const armR = box(0.28, 0.42, 0.28, C.dark);
+	armR.position.set(0.75, 0.1, -0.42);
+	dino.add(armR);
+
+	dino.add(legGroup);
+	scene.add(dino);
+
+	// sit the dino so feet touch ground line
+	dino.position.set(0, 0.2, 0);
+
+	// ── mouse tracking ───────────────────────────────────────────────
+	let mouseNX = 0;  // normalised -1..1
+	let mouseNY = 0;
+	let lerpX = 0;
+	let lerpY = 0;
+
+	if (!prefersReducedMotion) {
+		window.addEventListener('mousemove', (e) => {
+			mouseNX = (e.clientX / window.innerWidth - 0.5) * 2;
+			mouseNY = -(e.clientY / window.innerHeight - 0.5) * 2;
+		});
+	}
+
+	// ── animate ──────────────────────────────────────────────────────
+	let frameId = 0;
+	let visible = true;
+	const observer = new IntersectionObserver(([entry]) => {
+		visible = entry.isIntersecting;
+	});
+	observer.observe(container);
+
+	function tick(time: number) {
+		frameId = requestAnimationFrame(tick);
+		if (!visible) return;
+
+		const t = time * 0.001;
+
+		lerpX += (mouseNX - lerpX) * 0.06;
+		lerpY += (mouseNY - lerpY) * 0.06;
+
+		// idle bob
+		const bob = Math.sin(t * 2.2) * 0.07;
+		dino.position.y = 0.2 + bob;
+
+		// tail wag
+		tail2.rotation.z = Math.sin(t * 2.2) * 0.18;
+		tail3.rotation.z = Math.sin(t * 2.2 + 0.4) * 0.28;
+
+		// head tracks mouse (subtle)
+		head.rotation.y = lerpX * 0.45;
+		head.rotation.x = lerpY * 0.25;
+
+		// whole dino turns slightly toward mouse
+		dino.rotation.y = lerpX * 0.22;
+
+		// leg walk cycle
+		const walk = Math.sin(t * 3.5) * 0.18;
+		legFL.rotation.x =  walk;
+		legFR.rotation.x = -walk;
+		legBL.rotation.x = -walk;
+		legBR.rotation.x =  walk;
+		footFL.rotation.x =  walk * 0.5;
+		footFR.rotation.x = -walk * 0.5;
+		footBL.rotation.x = -walk * 0.5;
+		footBR.rotation.x =  walk * 0.5;
+
+		// tiny arm wiggle toward mouse
+		armL.rotation.x = lerpX * 0.5 + Math.sin(t * 1.5) * 0.12;
+		armR.rotation.x = -lerpX * 0.5 - Math.sin(t * 1.5) * 0.12;
+
+		renderer.render(scene, camera);
+	}
+
+	if (prefersReducedMotion) {
+		renderer.render(scene, camera);
+	} else {
+		frameId = requestAnimationFrame(tick);
+	}
+
+	document.addEventListener('astro:before-swap', () => cancelAnimationFrame(frameId), { once: true });
+</script>
+
+<style>
+	.dino-canvas-wrap {
+		width: 100%;
+		height: 220px;
+		pointer-events: none;
+	}
+
+	.dino-canvas-wrap canvas {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+</style>
