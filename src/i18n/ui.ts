@@ -85,7 +85,7 @@ export const ui = {
 
     'faq.heading': 'FAQ',
     'faq.q1': 'What kinds of projects do you take on?',
-    'faq.a1': 'Web apps, APIs, e-commerce stores, internal tools, and SaaS platforms — anything full-stack. I work with PHP/Laravel, Node.js, React, and Vue, so the stack can flex to fit your project.',
+    'faq.a1': 'Web apps, APIs, e-commerce stores, internal tools, and SaaS platforms — anything full-stack. I work with PHP/Laravel and Vue, so the stack can flex to fit your project.',
     'faq.q2': 'How does the process work?',
     'faq.a2': 'We start with a short call or message exchange to scope the project. I send a proposal with timeline and cost, we align, and work begins. I deliver in iterations so you can give feedback early.',
     'faq.q3': 'Do you work remotely?',
@@ -205,7 +205,7 @@ export const ui = {
 
     'faq.heading': 'Perguntas Frequentes',
     'faq.q1': 'Que tipos de projetos você aceita?',
-    'faq.a1': 'Apps web, APIs, lojas e-commerce, ferramentas internas e plataformas SaaS — tudo full-stack. Trabalho com PHP/Laravel, Node.js, React e Vue, então o stack se adapta ao seu projeto.',
+    'faq.a1': 'Apps web, APIs, lojas e-commerce, ferramentas internas e plataformas SaaS — tudo full-stack. Trabalho com PHP/Laravel e Vue, então o stack se adapta ao seu projeto.',
     'faq.q2': 'Como funciona o processo?',
     'faq.a2': 'Começa com uma conversa rápida para entender o escopo. Envio uma proposta com prazo e custo, alinhamos os detalhes e o trabalho começa. Entrego em iterações para você dar feedback logo cedo.',
     'faq.q3': 'Você trabalha remotamente?',
