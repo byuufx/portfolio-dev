@@ -31,7 +31,7 @@ export const ui = {
     'focus.heading': 'What I work on',
     'focus.title.saas': 'SaaS Platforms',
     'focus.desc.saas':
-      'Five years shipping features on a high-traffic SaaS platform (Onfly) — I know what it takes to keep a complex product moving fast without breaking what already works.',
+      'Five years shipping features on SaaS platforms, including Onfly — I know what it takes to keep a complex product moving fast without breaking what already works.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
       'Marketplace sync, ERP connections, inventory automation — I build the integrations that keep an e-commerce operation running without manual intervention.',
@@ -150,7 +150,7 @@ export const ui = {
     'focus.heading': 'No que eu trabalho',
     'focus.title.saas': 'Plataformas SaaS',
     'focus.desc.saas':
-      'Cinco anos entregando funcionalidades em uma plataforma SaaS de alto tráfego (Onfly) — sei o que é preciso para manter um produto complexo evoluindo rápido sem quebrar o que já funciona.',
+      'Cinco anos entregando funcionalidades em plataformas SaaS, incluindo a Onfly — sei o que é preciso para manter um produto complexo evoluindo rápido sem quebrar o que já funciona.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
       'Sincronização com marketplaces, conexão com ERPs, automação de estoque — construo as integrações que mantêm uma operação de e-commerce funcionando sem intervenção manual.',
