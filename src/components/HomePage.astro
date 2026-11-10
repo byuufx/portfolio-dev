@@ -280,6 +280,26 @@ const focusIcons: Record<string, string> = {
 		</section>
 	</main>
 
+	<!-- FAQ -->
+	<section class="border-t border-ink-700/60 px-6 py-16">
+		<div class="mx-auto max-w-3xl">
+			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('faq.heading')}</h2>
+			<dl class="mt-8 space-y-3">
+				{([1,2,3,4,5] as const).map((n) => (
+					<details class="group rounded-2xl border border-ink-700 bg-ink-800/60 px-6 py-4 open:border-copper-500/30">
+						<summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-paper">
+							{t(`faq.q${n}` as any)}
+							<svg class="h-4 w-4 shrink-0 text-copper-400 transition-transform duration-200 group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+							</svg>
+						</summary>
+						<p class="mt-3 text-base leading-relaxed text-paper-muted">{t(`faq.a${n}` as any)}</p>
+					</details>
+				))}
+			</dl>
+		</div>
+	</section>
+
 	<div class="flex justify-center border-t border-ink-700/40 pt-4">
 		<DinoCanvas />
 	</div>
