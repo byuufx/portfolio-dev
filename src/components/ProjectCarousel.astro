@@ -100,7 +100,6 @@ const viewLabel = lang === 'pt' ? 'Ver Projeto' : 'View Project';
       const linkEl = root.querySelector<HTMLAnchorElement>('.carousel-link')!;
 
       const projects: CarouselProject[] = JSON.parse(root.dataset.projects!);
-      // Fisher-Yates shuffle — different order every page load
       for (let i = projects.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [projects[i], projects[j]] = [projects[j], projects[i]];
