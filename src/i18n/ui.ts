@@ -9,7 +9,7 @@ export const defaultLang: Lang = 'pt';
 
 export const ui = {
   en: {
-    'meta.title': 'Felipe Trombini — Full Stack Developer',
+    'meta.title': 'Felipe Trombini — Senior Full Stack Developer',
     'meta.description':
       'Full Stack Engineer specializing in PHP backend systems — REST APIs, marketplace integrations, ' +
       'and SaaS platforms that scale. Available for new projects.',
@@ -20,7 +20,7 @@ export const ui = {
     'nav.contact': 'Contact',
 
     'hero.eyebrow': 'Available for new roles',
-    'hero.role': 'Full Stack Developer',
+    'hero.role': 'Senior Full Stack Developer',
     'hero.location': 'SP, Brazil',
     'hero.pitch':
       'I turn complex requirements into fast, reliable backends — APIs built for real traffic, ' +
@@ -62,8 +62,8 @@ export const ui = {
 
     'experience.heading': 'Professional Experience',
     'experience.present': 'Present',
-    'experience.title.new-rizon': 'Software Engineer',
-    'experience.title.tribox': 'Software Engineer',
+    'experience.title.new-rizon': 'Senior Software Engineer',
+    'experience.title.tribox': 'Senior Software Engineer',
     'experience.note.tribox': 'Started as intern in September 2020, transitioned to full-time developer in May 2021.',
 
     'education.heading': 'Education',
@@ -128,7 +128,7 @@ export const ui = {
     'privacy.back': '← Back',
   },
   pt: {
-    'meta.title': 'Felipe Trombini — Desenvolvedor Full Stack',
+    'meta.title': 'Felipe Trombini — Desenvolvedor Full Stack Sênior',
     'meta.description':
       'Engenheiro Full Stack especializado em sistemas backend PHP — APIs REST, integrações com marketplaces ' +
       'e plataformas SaaS que escalam. Disponível para novos projetos.',
@@ -139,7 +139,7 @@ export const ui = {
     'nav.contact': 'Contato',
 
     'hero.eyebrow': 'Disponível para novas oportunidades',
-    'hero.role': 'Desenvolvedor Full Stack',
+    'hero.role': 'Desenvolvedor Full Stack Sênior',
     'hero.location': 'SP, Brasil',
     'hero.pitch':
       'Transformo requisitos complexos em backends rápidos e confiáveis — APIs preparadas para tráfego real, ' +
@@ -182,8 +182,8 @@ export const ui = {
 
     'experience.heading': 'Experiência Profissional',
     'experience.present': 'Atual',
-    'experience.title.new-rizon': 'Engenheiro de Software',
-    'experience.title.tribox': 'Engenheiro de Software',
+    'experience.title.new-rizon': 'Engenheiro de Software Sênior',
+    'experience.title.tribox': 'Engenheiro de Software Sênior',
     'experience.note.tribox': 'Iniciou como estagiário em setembro de 2020, efetivado como desenvolvedor em maio de 2021.',
 
     'education.heading': 'Formação Acadêmica',
