@@ -24,7 +24,7 @@ export const ui = {
     'hero.location': 'SP, Brazil',
     'hero.pitch':
       'I build backend-heavy web platforms — PHP/Laravel and Hyperf APIs, e-commerce and ERP ' +
-      'integrations, SaaS for corporate travel. Five years of shipping things that hold up in production.',
+      'integrations, SaaS for corporate travel.',
     'hero.cta.contact': 'Get in touch',
     'hero.cta.resume': 'Download CV',
 
@@ -109,7 +109,7 @@ export const ui = {
     'hero.location': 'SP, Brasil',
     'hero.pitch':
       'Construo plataformas web com forte trabalho de backend — APIs em PHP/Laravel e Hyperf, ' +
-      'integrações de e-commerce e ERP, SaaS de gestão de viagens corporativas. Cinco anos entregando código que se sustenta em produção.',
+      'integrações de e-commerce e ERP, SaaS de gestão de viagens corporativas.',
     'hero.cta.contact': 'Entrar em contato',
     'hero.cta.resume': 'Baixar Currículo',
 

@@ -166,8 +166,27 @@
 		inset: 0;
 		z-index: 0;
 		pointer-events: none;
-		mask-image: radial-gradient(ellipse 85% 100% at 68% 50%, black 20%, transparent 78%);
-		-webkit-mask-image: radial-gradient(ellipse 85% 100% at 68% 50%, black 20%, transparent 78%);
+		/* show only left and right side strips */
+		mask-image: linear-gradient(to right,
+			transparent 0%,
+			black 5%,
+			black 20%,
+			transparent 27%,
+			transparent 73%,
+			black 80%,
+			black 95%,
+			transparent 100%
+		);
+		-webkit-mask-image: linear-gradient(to right,
+			transparent 0%,
+			black 5%,
+			black 20%,
+			transparent 27%,
+			transparent 73%,
+			black 80%,
+			black 95%,
+			transparent 100%
+		);
 	}
 
 	.hero-canvas canvas {
@@ -178,8 +197,7 @@
 
 	@media (max-width: 767px) {
 		.hero-canvas {
-			mask-image: radial-gradient(ellipse 100% 80% at 50% 60%, black 20%, transparent 80%);
-			-webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 60%, black 20%, transparent 80%);
+			display: none;
 		}
 	}
 </style>
