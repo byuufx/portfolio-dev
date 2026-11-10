@@ -15,7 +15,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const { author, role, email, linkedin, github, whatsapp, location, photo, resume } = content.about;
+const { author, role, email, linkedin, github, gitlab, whatsapp, location, photo, resume } = content.about;
 const { skills, experience, education, certifications, projects, focus } = content;
 
 const mailto = `mailto:${email}`;
@@ -267,6 +267,14 @@ const focusIcons: Record<string, string> = {
 						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
 					>
 						{t('contact.github')}
+					</a>
+					<a
+						href={gitlab}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full border border-ink-600 px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-colors hover:border-copper-500 hover:text-copper-400"
+					>
+						{t('contact.gitlab')}
 					</a>
 					<a
 						href={whatsapp}
