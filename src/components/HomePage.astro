@@ -109,6 +109,14 @@ const focusIcons: Record<string, string> = {
 			</div>
 		</section>
 
+		<!-- Projects -->
+		<section id="projects" class="border-t border-ink-700/60 px-6 py-16">
+			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('projects.heading')}</h2>
+			<div class="mt-8">
+				<ProjectCarousel projects={projects} lang={lang} />
+			</div>
+		</section>
+
 		<!-- About + Skills -->
 		<section id="about" class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('about.heading')}</h2>
@@ -229,14 +237,6 @@ const focusIcons: Record<string, string> = {
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<!-- Projects -->
-		<section id="projects" class="border-t border-ink-700/60 px-6 py-16">
-			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('projects.heading')}</h2>
-			<div class="mt-8">
-				<ProjectCarousel projects={projects} lang={lang} />
 			</div>
 		</section>
 
