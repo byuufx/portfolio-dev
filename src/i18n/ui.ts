@@ -88,6 +88,7 @@ export const ui = {
     'contact.email': 'Email',
     'contact.linkedin': 'LinkedIn',
     'contact.github': 'GitHub',
+    'contact.whatsapp': 'WhatsApp',
 
     'footer.built': 'Built by',
   },
@@ -171,6 +172,7 @@ export const ui = {
     'contact.email': 'E-mail',
     'contact.linkedin': 'LinkedIn',
     'contact.github': 'GitHub',
+    'contact.whatsapp': 'WhatsApp',
 
     'footer.built': 'Desenvolvido por',
   },
