@@ -69,32 +69,86 @@
         {
             "name": "Onfly",
             "url": "https://www.onfly.com.br/",
-            "category": "new-rizon"
+            "category": "new-rizon",
+            "screenshot": "onfly"
         },
         {
             "name": "Hyperf + RAG Embeddings POC",
             "url": "https://gitlab.com/byuufx/hyperf-embeddings-test",
-            "category": "new-rizon"
+            "category": "new-rizon",
+            "screenshot": "gitlab-hyperf"
         },
         {
             "name": "Diplomata",
             "url": "https://diplomata.com.br/",
-            "category": "freelance"
+            "category": "freelance",
+            "screenshot": "diplomata"
         },
         {
-            "name": "EPR Litoral Pioneiro",
-            "url": "https://play.google.com/store/apps/details?id=br.com.app.gpu3075278.gpu06c90c41f7b9b397a9533697fa5ddeb3&hl=pt_BR",
-            "category": "tribox"
+            "name": "Entrevias",
+            "url": "https://entrevias.com.br/",
+            "category": "tribox",
+            "screenshot": "entrevias"
+        },
+        {
+            "name": "Eixo SP",
+            "url": "https://eixosp.com.br/",
+            "category": "tribox",
+            "screenshot": "eixosp"
+        },
+        {
+            "name": "Nova 381",
+            "url": "https://nova381.com/",
+            "category": "tribox",
+            "screenshot": "nova381"
+        },
+        {
+            "name": "Novo Litoral",
+            "url": "https://novolitoral.com.br/",
+            "category": "tribox",
+            "screenshot": "novolitoral"
         },
         {
             "name": "Via Araucária",
-            "url": "https://apps.apple.com/br/app/via-arauc%C3%A1ria/id6670440738",
-            "category": "tribox"
+            "url": "https://viaaraucaria.com.br/",
+            "category": "tribox",
+            "screenshot": "viaaraucaria-web"
+        },
+        {
+            "name": "Zilio Alimentos",
+            "url": "https://zilioalimentos.com.br/",
+            "category": "tribox",
+            "screenshot": "zilioalimentos"
+        },
+        {
+            "name": "Santa Casa Bariri",
+            "url": "https://santacasabariri.com.br/",
+            "category": "tribox",
+            "screenshot": "santacasabariri"
+        },
+        {
+            "name": "Ksolda",
+            "url": "https://www.ksolda.com.br/",
+            "category": "tribox",
+            "screenshot": "ksolda"
+        },
+        {
+            "name": "BA Prado",
+            "url": "https://baprado.com.br/",
+            "category": "tribox",
+            "screenshot": "baprado"
+        },
+        {
+            "name": "Bellé Suporte",
+            "url": "https://bellesuporte.com.br/",
+            "category": "tribox",
+            "screenshot": "bellesuporte"
         },
         {
             "name": "Ferrucci",
             "url": "https://www.ferrucci.com.br/",
-            "category": "tribox"
+            "category": "tribox",
+            "screenshot": "ferrucci"
         }
     ]
 }

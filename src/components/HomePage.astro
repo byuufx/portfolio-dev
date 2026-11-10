@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import HeroCanvas from './HeroCanvas.astro';
+import ProjectCarousel from './ProjectCarousel.astro';
 import content from '../data/content.json';
 import { type Lang } from '../i18n/ui';
 import { useTranslations, getExperienceBullets } from '../i18n/utils';
@@ -26,13 +27,6 @@ const monthLabel = (ym: string) => {
   const date = new Date(Number(year), Number(month) - 1);
   return date.toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' });
 };
-
-const projectCategories = ['new-rizon', 'freelance', 'tribox'] as const;
-const projectGroups = projectCategories.map((category) => ({
-  category,
-  label: t(`projects.tab.${category}` as any),
-  items: projects.filter((p) => p.category === category),
-}));
 
 const skillGroups = [
   { label: t('skills.languages'), items: skills.languages },
@@ -241,27 +235,8 @@ const focusIcons: Record<string, string> = {
 		<!-- Projects -->
 		<section id="projects" class="border-t border-ink-700/60 px-6 py-16">
 			<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('projects.heading')}</h2>
-
-			<div class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-				{projectGroups.map((group) => (
-					<div>
-						<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{group.label}</p>
-						<div class="mt-4 grid grid-cols-1 gap-3">
-							{group.items.map((project) => (
-								<a
-									href={project.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									data-tilt
-									class="group flex items-center justify-between rounded-2xl border border-ink-700 bg-ink-800/60 px-5 py-4 text-paper transition-colors duration-150 hover:border-copper-500/50 hover:text-copper-400"
-								>
-									<span>{project.name}</span>
-									<span aria-hidden="true" class="font-mono text-xs transition-transform duration-150 group-hover:translate-x-0.5">&rarr;</span>
-								</a>
-							))}
-						</div>
-					</div>
-				))}
+			<div class="mt-8">
+				<ProjectCarousel projects={projects} lang={lang} />
 			</div>
 		</section>
 
