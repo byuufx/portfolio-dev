@@ -21,7 +21,7 @@ export const ui = {
 
     'hero.eyebrow': 'Available for new roles',
     'hero.role': 'Full Stack Developer',
-    'hero.location': 'Jaú, São Paulo, Brazil',
+    'hero.location': 'SP, Brazil',
     'hero.pitch':
       'I build backend-heavy web platforms — PHP/Laravel and Hyperf APIs, e-commerce and ERP ' +
       'integrations, SaaS for corporate travel. Five years of shipping things that hold up in production.',
@@ -106,7 +106,7 @@ export const ui = {
 
     'hero.eyebrow': 'Disponível para novas oportunidades',
     'hero.role': 'Desenvolvedor Full Stack',
-    'hero.location': 'Jaú, São Paulo, Brasil',
+    'hero.location': 'SP, Brasil',
     'hero.pitch':
       'Construo plataformas web com forte trabalho de backend — APIs em PHP/Laravel e Hyperf, ' +
       'integrações de e-commerce e ERP, SaaS de gestão de viagens corporativas. Cinco anos entregando código que se sustenta em produção.',
