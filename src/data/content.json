@@ -80,6 +80,12 @@
             "screenshot": "diplomata"
         },
         {
+            "name": "Skill CyberVerse",
+            "url": "https://skillcyber.com.br/",
+            "category": "freelance",
+            "screenshot": "skillcyber"
+        },
+        {
             "name": "Entrevias",
             "url": "https://entrevias.com.br/",
             "category": "tribox",
