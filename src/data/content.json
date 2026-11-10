@@ -74,12 +74,6 @@
             "screenshot": "onfly"
         },
         {
-            "name": "Hyperf + RAG Embeddings POC",
-            "url": "https://gitlab.com/byuufx/hyperf-embeddings-test",
-            "category": "new-rizon",
-            "screenshot": "gitlab-hyperf"
-        },
-        {
             "name": "Diplomata",
             "url": "https://diplomata.com.br/",
             "category": "freelance",
