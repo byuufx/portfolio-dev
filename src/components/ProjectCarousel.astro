@@ -103,15 +103,15 @@ const viewLabel = lang === 'pt' ? 'Ver Projeto' : 'View Project';
       const COUNT = projects.length;
 
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-      camera.position.z = 4.5;
+      const camera = new THREE.PerspectiveCamera(68, 1, 0.1, 100);
+      camera.position.z = 3.5;
 
       const renderer = new THREE.WebGLRenderer({ canvas: canvasEl, alpha: true, antialias: true });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       // Card dimensions (1.6:1 matches 1280×800 screenshots)
-      const CW = 3.6;
-      const CH = 2.25;
+      const CW = 4.8;
+      const CH = 3.0;
       const FP = 0.1;
 
       const inkColor = new THREE.Color('#212b4a');
@@ -170,8 +170,8 @@ const viewLabel = lang === 'pt' ? 'Ver Projeto' : 'View Project';
           const sign = off >= 0 ? 1 : -1;
           const cappedAbs = Math.min(abs, 2.5);
 
-          group.position.x = sign * cappedAbs * 2.2;
-          group.position.z = -cappedAbs * 0.42;
+          group.position.x = sign * cappedAbs * 2.9;
+          group.position.z = -cappedAbs * 0.5;
           group.rotation.y = -sign * Math.min(abs, 1) * (Math.PI / 2.5);
           group.scale.setScalar(Math.max(0.72, 1 - Math.min(abs, 2) * 0.14));
 
@@ -186,7 +186,7 @@ const viewLabel = lang === 'pt' ? 'Ver Projeto' : 'View Project';
 
       function resize() {
         const w = root.clientWidth;
-        const h = Math.max(260, Math.min(460, Math.round(w * 0.5)));
+        const h = Math.min(Math.round(window.innerHeight * 0.72), Math.max(380, Math.round(w * 0.6)));
         canvasEl.style.height = `${h}px`;
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
