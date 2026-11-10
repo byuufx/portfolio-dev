@@ -11,8 +11,8 @@ export const ui = {
   en: {
     'meta.title': 'Felipe Trombini — Full Stack Developer',
     'meta.description':
-      'Software Engineer with 5+ years of experience in PHP, Laravel and Hyperf. ' +
-      'REST APIs, system integration and SaaS architecture in e-commerce and corporate travel management.',
+      'Full Stack Engineer specializing in PHP backend systems — REST APIs, marketplace integrations, ' +
+      'and SaaS platforms that scale. Available for new projects.',
 
     'nav.about': 'About',
     'nav.experience': 'Experience',
@@ -23,36 +23,36 @@ export const ui = {
     'hero.role': 'Full Stack Developer',
     'hero.location': 'SP, Brazil',
     'hero.pitch':
-      'I build backend-heavy web platforms — PHP/Laravel and Hyperf APIs, e-commerce and ERP ' +
-      'integrations, SaaS for corporate travel.',
+      'I turn complex requirements into fast, reliable backends — APIs built for real traffic, ' +
+      'integrations that stay in sync, and SaaS systems that hold up under load.',
     'hero.cta.contact': 'Get in touch',
     'hero.cta.resume': 'View CV',
 
     'focus.heading': 'What I work on',
     'focus.title.saas': 'SaaS Platforms',
     'focus.desc.saas':
-      'Working on Onfly, one of the largest corporate travel management platforms in Latin America — Vue.js interfaces, Hyperf APIs built for scale.',
+      'Five years shipping features on a high-traffic SaaS platform (Onfly) — I know what it takes to keep a complex product moving fast without breaking what already works.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
-      'Integrated marketplaces like Mercado Livre and ERPs like Bling and Tiny into a proprietary B2B/B2C e-commerce platform.',
+      'Marketplace sync, ERP connections, inventory automation — I build the integrations that keep an e-commerce operation running without manual intervention.',
     'focus.title.apis': 'REST APIs & Microservices',
     'focus.desc.apis':
-      'Designed REST APIs for order management and logistics, favoring small, testable services over monoliths.',
+      'REST APIs with predictable contracts and room to grow. I design for the team that will maintain them next year, not just for the sprint that ships them today.',
     'focus.title.performance': 'Performance & Reliability',
     'focus.desc.performance':
-      'Redis caching, query optimization, and Sentry monitoring — the unglamorous work that keeps production fast and honest.',
+      'Slow endpoints and flaky routes cost real money. I track down the bottlenecks — query plans, cache misses, N+1s — and fix them with measurable results.',
     'focus.title.ai': 'Applied AI & RAG',
     'focus.desc.ai':
-      'Built and presented an internal proof-of-concept on embedding generation and Retrieval-Augmented Generation using Hyperf and the OpenAI API — open source, linked below.',
+      'I add AI capabilities to existing PHP backends without rebuilding your stack — semantic search, document Q&A, and retrieval pipelines that plug into your current infrastructure.',
 
     'about.heading': 'About',
     'about.summary.p1':
-      'Software Engineer with 5+ years of experience, specialized in PHP, Laravel and Hyperf. ' +
-      'Proven expertise in REST APIs, system integration, and SaaS application architecture in ' +
-      'e-commerce and corporate travel management sectors. Advanced English proficiency (TOEIC C1).',
+      'Full Stack Engineer with 5+ years building and scaling web platforms in PHP, Laravel, and Hyperf. ' +
+      'I specialize in backend systems that handle real traffic — REST APIs, marketplace integrations, and SaaS ' +
+      'architecture across e-commerce and corporate travel. Advanced English (TOEIC C1).',
     'about.summary.p2':
-      'Results-driven developer focused on delivering value through clean, efficient code. ' +
-      'Strong team collaborator with a passion for continuous learning and professional growth.',
+      'I work best on problems that are actually hard: messy third-party integrations, performance bottlenecks, ' +
+      'or adding new capabilities to systems that can\'t go down. I write clean code, communicate clearly, and ship.',
 
     'skills.heading': 'Technical Skills',
     'skills.languages': 'Programming Languages',
@@ -92,12 +92,34 @@ export const ui = {
     'contact.whatsapp': 'WhatsApp',
 
     'footer.built': 'Built by',
+    'footer.privacy': 'Privacy Policy',
+
+    'privacy.title': 'Privacy Policy',
+    'privacy.last_updated': 'Last updated: November 2026',
+    'privacy.intro':
+      'This website is a personal portfolio. It does not collect, store, or process any personal data.',
+    'privacy.no_cookies_title': 'No cookies',
+    'privacy.no_cookies':
+      'This site does not set any cookies — first-party or third-party.',
+    'privacy.no_tracking_title': 'No tracking or analytics',
+    'privacy.no_tracking':
+      'No analytics scripts, tracking pixels, or fingerprinting tools are used. Your visit is not logged or measured.',
+    'privacy.no_forms_title': 'No data collection',
+    'privacy.no_forms':
+      'The contact links on this site (email, LinkedIn, WhatsApp) open external services that have their own privacy policies. No data is submitted to or stored by this site.',
+    'privacy.external_title': 'External links',
+    'privacy.external':
+      'This site links to external services (GitHub, LinkedIn, WhatsApp, project URLs). Once you leave this site, their respective privacy policies apply.',
+    'privacy.contact_title': 'Contact',
+    'privacy.contact':
+      'Questions? Reach out via the contact links on the main page.',
+    'privacy.back': '← Back',
   },
   pt: {
     'meta.title': 'Felipe Trombini — Desenvolvedor Full Stack',
     'meta.description':
-      'Engenheiro de Software com mais de 5 anos de experiência em PHP, Laravel e Hyperf. ' +
-      'APIs REST, integração de sistemas e arquitetura SaaS em e-commerce e gestão de viagens corporativas.',
+      'Engenheiro Full Stack especializado em sistemas backend PHP — APIs REST, integrações com marketplaces ' +
+      'e plataformas SaaS que escalam. Disponível para novos projetos.',
 
     'nav.about': 'Sobre',
     'nav.experience': 'Experiência',
@@ -108,36 +130,37 @@ export const ui = {
     'hero.role': 'Desenvolvedor Full Stack',
     'hero.location': 'SP, Brasil',
     'hero.pitch':
-      'Construo plataformas web com forte trabalho de backend — APIs em PHP/Laravel e Hyperf, ' +
-      'integrações de e-commerce e ERP, SaaS de gestão de viagens corporativas.',
+      'Transformo requisitos complexos em backends rápidos e confiáveis — APIs preparadas para tráfego real, ' +
+      'integrações que se mantêm sincronizadas e sistemas SaaS que aguentam a carga.',
     'hero.cta.contact': 'Entrar em contato',
     'hero.cta.resume': 'Ver Currículo',
 
     'focus.heading': 'No que eu trabalho',
     'focus.title.saas': 'Plataformas SaaS',
     'focus.desc.saas':
-      'Trabalho na Onfly, uma das maiores plataformas de gestão de viagens corporativas da América Latina — interfaces em Vue.js, APIs em Hyperf pensadas para escalar.',
+      'Cinco anos entregando funcionalidades em uma plataforma SaaS de alto tráfego (Onfly) — sei o que é preciso para manter um produto complexo evoluindo rápido sem quebrar o que já funciona.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
-      'Integrei marketplaces como o Mercado Livre e ERPs como Bling e Tiny a uma plataforma de e-commerce B2B/B2C proprietária.',
+      'Sincronização com marketplaces, conexão com ERPs, automação de estoque — construo as integrações que mantêm uma operação de e-commerce funcionando sem intervenção manual.',
     'focus.title.apis': 'APIs REST & Microsserviços',
     'focus.desc.apis':
-      'Desenho de APIs REST para gestão de pedidos e logística, priorizando serviços pequenos e testáveis em vez de monólitos.',
+      'APIs REST com contratos previsíveis e espaço para crescer. Projeto pensando na equipe que vai manter o código no ano que vem, não apenas no sprint que vai entregá-lo hoje.',
     'focus.title.performance': 'Performance & Confiabilidade',
     'focus.desc.performance':
-      'Cache com Redis, otimização de queries e monitoramento com Sentry — o trabalho pouco glamouroso que mantém a produção rápida e honesta.',
+      'Endpoints lentos e rotas instáveis custam dinheiro real. Rastreio os gargalos — planos de query, cache miss, N+1 — e os corrijo com resultados mensuráveis.',
     'focus.title.ai': 'IA Aplicada & RAG',
     'focus.desc.ai':
-      'Desenvolvi e apresentei uma prova de conceito interna sobre geração de embeddings e RAG (Retrieval-Augmented Generation) utilizando Hyperf e a API da OpenAI — código aberto, link abaixo.',
+      'Adiciono capacidades de IA a backends PHP existentes sem reescrever a stack — busca semântica, perguntas sobre documentos e pipelines de recuperação que se integram à infraestrutura atual.',
 
     'about.heading': 'Sobre',
     'about.summary.p1':
-      'Engenheiro de Software com mais de 5 anos de experiência, especializado em PHP, Laravel e Hyperf. ' +
-      'Expertise comprovada em APIs REST, integração de sistemas e arquitetura de aplicações SaaS nos ' +
-      'setores de e-commerce e gestão de viagens corporativas. Inglês avançado (TOEIC C1).',
+      'Engenheiro Full Stack com mais de 5 anos construindo e escalando plataformas web em PHP, Laravel e Hyperf. ' +
+      'Especializado em sistemas backend que suportam tráfego real — APIs REST, integrações com marketplaces e ' +
+      'arquitetura SaaS em e-commerce e gestão de viagens corporativas. Inglês avançado (TOEIC C1).',
     'about.summary.p2':
-      'Desenvolvedor orientado a resultados, focado em entregar valor através de código limpo e eficiente. ' +
-      'Forte colaborador em equipe, com paixão por aprendizado contínuo e crescimento profissional.',
+      'Trabalho melhor em problemas que são realmente difíceis: integrações complexas com terceiros, gargalos de ' +
+      'performance ou adição de novas capacidades a sistemas que não podem parar. Escrevo código limpo, me comunico ' +
+      'com clareza e entrego.',
 
     'skills.heading': 'Habilidades Técnicas',
     'skills.languages': 'Linguagens de Programação',
@@ -169,7 +192,7 @@ export const ui = {
     'projects.tab.tribox': 'Tribox',
 
     'contact.heading': 'Entre em Contato',
-    'contact.pitch': 'Tem um projeto em mente ou uma vaga que combina comigo? Costumo responder rápido.',
+    'contact.pitch': 'Tem um projeto em mente, ou uma vaga que combina? Costumo responder rápido.',
     'contact.email': 'E-mail',
     'contact.linkedin': 'LinkedIn',
     'contact.github': 'GitHub',
@@ -177,48 +200,70 @@ export const ui = {
     'contact.whatsapp': 'WhatsApp',
 
     'footer.built': 'Desenvolvido por',
+    'footer.privacy': 'Política de Privacidade',
+
+    'privacy.title': 'Política de Privacidade',
+    'privacy.last_updated': 'Última atualização: novembro de 2026',
+    'privacy.intro':
+      'Este site é um portfólio pessoal. Ele não coleta, armazena nem processa nenhum dado pessoal.',
+    'privacy.no_cookies_title': 'Sem cookies',
+    'privacy.no_cookies':
+      'Este site não define nenhum cookie — próprio ou de terceiros.',
+    'privacy.no_tracking_title': 'Sem rastreamento ou analytics',
+    'privacy.no_tracking':
+      'Nenhum script de analytics, pixel de rastreamento ou ferramenta de fingerprinting é utilizado. Sua visita não é registrada nem medida.',
+    'privacy.no_forms_title': 'Sem coleta de dados',
+    'privacy.no_forms':
+      'Os links de contato neste site (e-mail, LinkedIn, WhatsApp) abrem serviços externos com suas próprias políticas de privacidade. Nenhum dado é enviado ou armazenado por este site.',
+    'privacy.external_title': 'Links externos',
+    'privacy.external':
+      'Este site contém links para serviços externos (GitHub, LinkedIn, WhatsApp, URLs de projetos). Ao sair deste site, as políticas de privacidade de cada serviço se aplicam.',
+    'privacy.contact_title': 'Contato',
+    'privacy.contact':
+      'Dúvidas? Entre em contato pelos links na página principal.',
+    'privacy.back': '← Voltar',
   },
 } as const;
 
 export const experienceBullets: Record<Lang, Record<string, string[]>> = {
   en: {
     'new-rizon': [
-      'Developing high-traffic features, complex routing, and modern frontends for one of the largest travel tech platforms in Latin America (Onfly) using PHP (Hyperf) and Vue.js',
-      'Engineered a 90% reduction in API route loading times through targeted performance optimization',
-      'Scaled and maintained high-traffic routes used by thousands of active users daily',
-      'Decreased frontend production bugs by over 30% by proactively monitoring and resolving Sentry alerts',
-      'Maintained a high development velocity by leveraging advanced AI tools like Claude Code for smart workflows',
-      'Utilized Mixpanel and Sentry metrics to measure feature impact and align microservices architecture with stakeholder business goals',
-      'Presented an internal proof-of-concept on embedding generation and Retrieval-Augmented Generation (RAG) using Hyperf and the OpenAI API, then open-sourced it for the team',
+      'Building and scaling features on Onfly — one of Latin America\'s largest corporate travel platforms — with PHP (Hyperf) and Vue.js',
+      'Cut API route loading times by 90% through targeted backend optimization',
+      'Maintained high-traffic routes serving thousands of active users daily',
+      'Reduced frontend production bugs by 30%+ through proactive Sentry monitoring and resolution',
+      'Accelerated delivery cycles using AI-assisted workflows (Claude Code) for code review, refactoring, and debugging',
+      'Used Mixpanel and Sentry data to measure feature impact and align architecture decisions with business goals',
+      'Built and open-sourced a RAG pipeline in PHP/Hyperf — a production-ready starting point for adding AI-powered search to existing PHP backends',
     ],
     tribox: [
-      'Developed and maintained proprietary B2B/B2C e-commerce platform built with PHP and Laravel',
-      'Implemented integrations with major marketplaces and ERP systems (Mercado Livre, Bling, Tiny)',
-      'Designed REST APIs for order management and logistics systems integration',
-      'Automated order synchronization and inventory management processes',
-      'Provided technical support and training to corporate clients',
-      'Performed corrective and evolutionary maintenance on critical applications',
-      'Collaborated effectively with cross-functional teams using Trello for project management',
+      'Built and maintained a proprietary B2B/B2C e-commerce platform in PHP/Laravel from early-stage product to production',
+      'Integrated Mercado Livre, Bling, and Tiny — covering listings, order sync, and inventory across all channels',
+      'Designed REST APIs for order management and third-party logistics system integration',
+      'Automated order synchronization and inventory management, eliminating manual reconciliation',
+      'Provided technical support and onboarding to corporate clients',
+      'Performed corrective and evolutionary maintenance on mission-critical applications',
+      'Collaborated with cross-functional teams using Trello for project tracking and delivery',
     ],
   },
   pt: {
     'new-rizon': [
-      'Desenvolvimento de funcionalidades de alto tráfego, rotas complexas e frontends modernos para uma das maiores plataformas de travel tech da América Latina (Onfly), utilizando PHP (Hyperf) e Vue.js',
-      'Redução de 90% no tempo de carregamento de rotas de API através de otimização de performance direcionada',
-      'Escalonamento e manutenção de rotas de alto tráfego utilizadas por milhares de usuários ativos diariamente',
-      'Redução de mais de 30% nos bugs de produção do frontend através do monitoramento proativo e resolução de alertas no Sentry',
-      'Manutenção de alta velocidade de desenvolvimento utilizando ferramentas avançadas de IA, como o Claude Code, para fluxos de trabalho inteligentes',
-      'Uso de métricas do Mixpanel e Sentry para medir o impacto de funcionalidades e alinhar a arquitetura de microsserviços com os objetivos de negócio dos stakeholders',
-      'Apresentou uma prova de conceito interna sobre geração de embeddings e RAG (Retrieval-Augmented Generation) utilizando Hyperf e a API da OpenAI, disponibilizando o projeto como open source para a equipe',
+      'Desenvolvimento e escalonamento de funcionalidades na Onfly — uma das maiores plataformas de gestão de viagens corporativas da América Latina — utilizando PHP (Hyperf) e Vue.js',
+      'Redução de 90% no tempo de carregamento de rotas de API através de otimização de backend direcionada',
+      'Manutenção de rotas de alto tráfego utilizadas por milhares de usuários ativos diariamente',
+      'Redução de mais de 30% nos bugs de produção do frontend através de monitoramento proativo e resolução de alertas no Sentry',
+      'Aceleração dos ciclos de entrega com fluxos de trabalho assistidos por IA (Claude Code) para revisão de código, refatoração e depuração',
+      'Uso de dados do Mixpanel e Sentry para medir o impacto de funcionalidades e alinhar decisões de arquitetura com objetivos de negócio',
+      'Construção e publicação como open source de um pipeline RAG em PHP/Hyperf — ponto de partida pronto para produção para adicionar busca por IA a backends PHP existentes',
     ],
     tribox: [
-      'Desenvolvimento e manutenção de plataforma de e-commerce proprietária B2B/B2C construída em PHP e Laravel',
-      'Implementação de integrações com grandes marketplaces e sistemas ERP (Mercado Livre, Bling, Tiny)',
-      'Design de APIs REST para gestão de pedidos e integração com sistemas de logística',
-      'Automação de sincronização de pedidos e processos de gestão de estoque',
-      'Suporte técnico e treinamento para clientes corporativos',
-      'Manutenção corretiva e evolutiva em aplicações críticas',
-      'Colaboração efetiva com equipes multidisciplinares utilizando Trello para gestão de projetos',
+      'Construção e manutenção de plataforma de e-commerce proprietária B2B/B2C em PHP/Laravel, do estágio inicial até a produção',
+      'Integração com Mercado Livre, Bling e Tiny — cobrindo listagens, sincronização de pedidos e estoque em todos os canais',
+      'Design de APIs REST para gestão de pedidos e integração com sistemas de logística terceirizados',
+      'Automação da sincronização de pedidos e gestão de estoque, eliminando reconciliação manual',
+      'Suporte técnico e onboarding para clientes corporativos',
+      'Manutenção corretiva e evolutiva em aplicações de missão crítica',
+      'Colaboração com equipes multidisciplinares utilizando Trello para rastreamento e entrega de projetos',
     ],
   },
 };

@@ -1,0 +1,43 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+const t = useTranslations('en');
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout lang="en" title={`${t('privacy.title')} — Felipe Trombini`}>
+	<div class="mx-auto max-w-2xl px-6 py-20">
+		<a href={BASE_URL + '/en/'} class="font-mono text-xs uppercase tracking-wider text-paper-muted/60 hover:text-copper-400 transition-colors">
+			{t('privacy.back')}
+		</a>
+
+		<h1 class="mt-8 font-display text-3xl font-semibold tracking-tight text-paper">{t('privacy.title')}</h1>
+		<p class="mt-2 font-mono text-xs uppercase tracking-wider text-paper-muted/50">{t('privacy.last_updated')}</p>
+
+		<p class="mt-8 text-paper-muted leading-relaxed">{t('privacy.intro')}</p>
+
+		<div class="mt-10 space-y-8">
+			<div>
+				<h2 class="font-display text-lg font-semibold text-paper">{t('privacy.no_cookies_title')}</h2>
+				<p class="mt-2 text-paper-muted leading-relaxed">{t('privacy.no_cookies')}</p>
+			</div>
+			<div>
+				<h2 class="font-display text-lg font-semibold text-paper">{t('privacy.no_tracking_title')}</h2>
+				<p class="mt-2 text-paper-muted leading-relaxed">{t('privacy.no_tracking')}</p>
+			</div>
+			<div>
+				<h2 class="font-display text-lg font-semibold text-paper">{t('privacy.no_forms_title')}</h2>
+				<p class="mt-2 text-paper-muted leading-relaxed">{t('privacy.no_forms')}</p>
+			</div>
+			<div>
+				<h2 class="font-display text-lg font-semibold text-paper">{t('privacy.external_title')}</h2>
+				<p class="mt-2 text-paper-muted leading-relaxed">{t('privacy.external')}</p>
+			</div>
+			<div>
+				<h2 class="font-display text-lg font-semibold text-paper">{t('privacy.contact_title')}</h2>
+				<p class="mt-2 text-paper-muted leading-relaxed">{t('privacy.contact')}</p>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -17,7 +17,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const { author, role, email, linkedin, github, gitlab, whatsapp, location, photo, resume } = content.about;
-const { skills, experience, education, certifications, projects, focus } = content;
+const { skills, experience, education, projects, focus } = content;
 
 const mailto = `mailto:${email}`;
 const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -227,16 +227,10 @@ const focusIcons: Record<string, string> = {
 				</div>
 
 				<div class="rounded-2xl border border-ink-700 bg-ink-800/60 p-6 sm:p-8">
-					<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('certifications.heading')}</h2>
+					<h2 class="font-mono text-xs uppercase tracking-wider text-copper-400">{t('languages.heading')}</h2>
 					<div class="mt-6 divide-y divide-ink-700">
-						{certifications.map((cert) => (
-							<div class="py-4 first:pt-0 text-paper">{t(`certifications.name.${cert.id}` as any)}</div>
-						))}
-						<div class="py-4 last:pb-0">
-							<p class="font-mono text-xs uppercase tracking-wider text-paper-muted">{t('languages.heading')}</p>
-							<p class="mt-2 text-paper">{t('languages.portuguese')}</p>
-							<p class="mt-1 text-paper">{t('languages.english')}</p>
-						</div>
+						<p class="pb-4 text-paper">{t('languages.portuguese')}</p>
+						<p class="pt-4 text-paper">{t('languages.english')}</p>
 					</div>
 				</div>
 			</div>
