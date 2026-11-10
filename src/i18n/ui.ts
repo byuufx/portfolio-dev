@@ -26,7 +26,7 @@ export const ui = {
       'I build backend-heavy web platforms — PHP/Laravel and Hyperf APIs, e-commerce and ERP ' +
       'integrations, SaaS for corporate travel.',
     'hero.cta.contact': 'Get in touch',
-    'hero.cta.resume': 'Download CV',
+    'hero.cta.resume': 'View CV',
 
     'focus.heading': 'What I work on',
     'focus.title.saas': 'SaaS Platforms',
@@ -111,7 +111,7 @@ export const ui = {
       'Construo plataformas web com forte trabalho de backend — APIs em PHP/Laravel e Hyperf, ' +
       'integrações de e-commerce e ERP, SaaS de gestão de viagens corporativas.',
     'hero.cta.contact': 'Entrar em contato',
-    'hero.cta.resume': 'Baixar Currículo',
+    'hero.cta.resume': 'Ver Currículo',
 
     'focus.heading': 'No que eu trabalho',
     'focus.title.saas': 'Plataformas SaaS',
