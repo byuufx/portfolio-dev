@@ -192,7 +192,7 @@ export const experienceBullets: Record<Lang, Record<string, string[]>> = {
       'Presented an internal proof-of-concept on embedding generation and Retrieval-Augmented Generation (RAG) using Hyperf and the OpenAI API, then open-sourced it for the team',
     ],
     tribox: [
-      'Developed and maintained proprietary B2B/B2C e-commerce platform',
+      'Developed and maintained proprietary B2B/B2C e-commerce platform built with PHP and Laravel',
       'Implemented integrations with major marketplaces and ERP systems (Mercado Livre, Bling, Tiny)',
       'Designed REST APIs for order management and logistics systems integration',
       'Automated order synchronization and inventory management processes',
@@ -212,7 +212,7 @@ export const experienceBullets: Record<Lang, Record<string, string[]>> = {
       'Apresentou uma prova de conceito interna sobre geração de embeddings e RAG (Retrieval-Augmented Generation) utilizando Hyperf e a API da OpenAI, disponibilizando o projeto como open source para a equipe',
     ],
     tribox: [
-      'Desenvolvimento e manutenção de plataforma de e-commerce proprietária B2B/B2C',
+      'Desenvolvimento e manutenção de plataforma de e-commerce proprietária B2B/B2C construída em PHP e Laravel',
       'Implementação de integrações com grandes marketplaces e sistemas ERP (Mercado Livre, Bling, Tiny)',
       'Design de APIs REST para gestão de pedidos e integração com sistemas de logística',
       'Automação de sincronização de pedidos e processos de gestão de estoque',
