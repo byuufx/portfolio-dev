@@ -16,7 +16,8 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const { author, role, email, linkedin, github, gitlab, whatsapp, location, photo, resume } = content.about;
-const { skills, experience, education, certifications, projects, focus } = content;
+const { skills, experience, education, certifications, focus } = content;
+const projects = [...content.projects].sort(() => Math.random() - 0.5);
 
 const mailto = `mailto:${email}`;
 const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '');
