@@ -31,7 +31,7 @@ export const ui = {
     'focus.heading': 'What I work on',
     'focus.title.saas': 'SaaS Platforms',
     'focus.desc.saas':
-      'Five years shipping features on SaaS platforms, including Onfly — I know what it takes to keep a complex product moving fast without breaking what already works.',
+      'Six years shipping features on SaaS platforms, including Onfly — I know what it takes to keep a complex product moving fast without breaking what already works.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
       'Marketplace sync, ERP connections, inventory automation — I build the integrations that keep an e-commerce operation running without manual intervention.',
@@ -47,7 +47,7 @@ export const ui = {
 
     'about.heading': 'About',
     'about.summary.p1':
-      'Senior Full Stack Developer with 5+ years of experience building and scaling web platforms in PHP, Laravel, Hyperf, and Vue.js. ' +
+      'Senior Full Stack Developer with 6+ years of experience building and scaling web platforms in PHP, Laravel, Hyperf, and Vue.js. ' +
       'At Onfly, a corporate travel platform, I work on routes serving 100,000+ users — including one cut from 5 minutes to 10 seconds. ' +
       'Before that, I built an e-commerce platform for around 500 online stores at Tribox, with payment, shipping, and ERP integrations. Advanced English (TOEIC C1).',
     'about.summary.p2':
@@ -149,7 +149,7 @@ export const ui = {
     'focus.heading': 'No que eu trabalho',
     'focus.title.saas': 'Plataformas SaaS',
     'focus.desc.saas':
-      'Cinco anos entregando funcionalidades em plataformas SaaS, incluindo a Onfly — sei o que é preciso para manter um produto complexo evoluindo rápido sem quebrar o que já funciona.',
+      'Seis anos entregando funcionalidades em plataformas SaaS, incluindo a Onfly — sei o que é preciso para manter um produto complexo evoluindo rápido sem quebrar o que já funciona.',
     'focus.title.ecommerce': 'E-commerce & ERP',
     'focus.desc.ecommerce':
       'Sincronização com marketplaces, conexão com ERPs, automação de estoque — construo as integrações que mantêm uma operação de e-commerce funcionando sem intervenção manual.',
@@ -165,7 +165,7 @@ export const ui = {
 
     'about.heading': 'Sobre',
     'about.summary.p1':
-      'Desenvolvedor Full Stack Sênior com mais de 5 anos de experiência construindo e escalando plataformas web em PHP, Laravel, Hyperf e Vue.js. ' +
+      'Desenvolvedor Full Stack Sênior com mais de 6 anos de experiência construindo e escalando plataformas web em PHP, Laravel, Hyperf e Vue.js. ' +
       'Na Onfly, plataforma de gestão de viagens corporativas, atuo em rotas usadas por mais de 100.000 usuários — incluindo uma que passou de 5 minutos para 10 segundos. ' +
       'Antes disso, construí na Tribox uma plataforma de e-commerce para cerca de 500 lojas online, com integrações de pagamento, frete e ERP. Inglês avançado (TOEIC C1).',
     'about.summary.p2':
