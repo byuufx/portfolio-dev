@@ -14,13 +14,13 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^7.1.1",
     "astro-seo-schema": "^7.0.0",
-    "schema-dts": "^1.1.2",
+    "schema-dts": "^1.1.5",
     "tailwindcss": "^4.1.11",
-    "three": "^0.185.1",
-    "typescript": "^5.5.3"
+    "three": "^0.187.0",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@types/three": "^0.185.1",
+    "@types/three": "^0.187.0",
     "puppeteer-core": "^25.16.0"
   }
 }
