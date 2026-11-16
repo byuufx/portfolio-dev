@@ -1,6 +1,7 @@
 ---
 import { type Lang } from '../i18n/ui';
 import { useTranslations } from '../i18n/utils';
+import BackToTop from './BackToTop.astro';
 
 interface Props {
   lang: Lang;
@@ -33,3 +34,4 @@ const year = new Date().getFullYear();
 		</a>
 	</div>
 </footer>
+<BackToTop lang={lang} />

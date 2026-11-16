@@ -1,0 +1,51 @@
+---
+import { type Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+	lang: Lang;
+}
+
+const t = useTranslations(Astro.props.lang);
+---
+
+<button
+	id="back-to-top"
+	type="button"
+	aria-label={t('footer.top')}
+	title={t('footer.top')}
+	class="pointer-events-none fixed bottom-6 right-6 z-40 flex h-12 w-12 translate-y-2 items-center justify-center rounded-full bg-copper-500 text-ink-950 opacity-0 shadow-lg shadow-copper-500/20 transition-[opacity,transform,background-color] hover:scale-[1.05] hover:bg-copper-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper-400"
+>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2.5"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="h-5 w-5"
+		aria-hidden="true"
+	>
+		<path d="M12 19V5M5 12l7-7 7 7"></path>
+	</svg>
+</button>
+
+<script>
+	const btn = document.getElementById('back-to-top');
+	if (btn) {
+		const update = () => {
+			const show = window.scrollY > 400;
+			btn.classList.toggle('opacity-0', !show);
+			btn.classList.toggle('translate-y-2', !show);
+			btn.classList.toggle('pointer-events-none', !show);
+			btn.tabIndex = show ? 0 : -1;
+		};
+		window.addEventListener('scroll', update, { passive: true });
+		update();
+		btn.addEventListener('click', () => {
+			const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+		});
+	}
+</script>

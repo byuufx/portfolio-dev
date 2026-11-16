@@ -104,6 +104,7 @@ export const ui = {
 
     'footer.built': 'Built by',
     'footer.privacy': 'Privacy Policy',
+    'footer.top': 'Back to top',
 
     'privacy.title': 'Privacy Policy',
     'privacy.last_updated': 'Last updated: November 2026',
@@ -222,6 +223,7 @@ export const ui = {
 
     'footer.built': 'Desenvolvido por',
     'footer.privacy': 'Política de Privacidade',
+    'footer.top': 'Voltar ao topo',
 
     'privacy.title': 'Política de Privacidade',
     'privacy.last_updated': 'Última atualização: novembro de 2026',
