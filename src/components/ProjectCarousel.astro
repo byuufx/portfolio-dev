@@ -18,11 +18,14 @@ const { projects, lang } = Astro.props;
 const t = useTranslations(lang);
 const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+// Cache-bust per build: filenames are stable, so without this browsers/CDN keep stale images.
+const BUILD_VERSION = Date.now().toString(36);
+
 const carouselData = projects.map(p => ({
   name: p.name,
   url: p.url,
   categoryLabel: t(`projects.tab.${p.category}` as any),
-  screenshot: `${BASE_URL}/screenshots/${p.screenshot}.webp`,
+  screenshot: `${BASE_URL}/screenshots/${p.screenshot}.webp?v=${BUILD_VERSION}`,
 }));
 
 const prevLabel = lang === 'pt' ? 'Anterior' : 'Previous';
