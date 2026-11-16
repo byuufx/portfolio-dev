@@ -37,15 +37,15 @@
         {
             "id": "tribox",
             "company": "Tribox E-commerce",
-            "location": "Jaú, São Paulo, Brazil",
+            "location": "SP, Brazil",
             "start": "2020-09",
             "end": "2024-12"
         }
     ],
     "education": [
         {
-            "id": "fatec-jau",
-            "institution": "Fatec Jaú",
+            "id": "fatec-jahu",
+            "institution": "FATEC Jahu",
             "start": "2022",
             "end": "2024"
         },
@@ -57,7 +57,7 @@
         },
         {
             "id": "etec",
-            "institution": "Etec Joaquim Ferreira do Amaral",
+            "institution": "ETEC Joaquim Ferreira do Amaral",
             "start": "2017",
             "end": "2019"
         }

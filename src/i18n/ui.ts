@@ -11,7 +11,7 @@ export const ui = {
   en: {
     'meta.title': 'Felipe Trombini — Senior Full Stack Developer',
     'meta.description':
-      'Full Stack Engineer specializing in PHP backend systems — REST APIs, marketplace integrations, ' +
+      'Senior Full Stack Developer specializing in PHP backend systems — REST APIs, marketplace integrations, ' +
       'and SaaS platforms that scale. Available for new projects.',
 
     'nav.about': 'About',
@@ -40,19 +40,18 @@ export const ui = {
       'REST APIs with predictable contracts and room to grow. I design for the team that will maintain them next year, not just for the sprint that ships them today.',
     'focus.title.performance': 'Performance & Reliability',
     'focus.desc.performance':
-      'Slow endpoints and flaky routes cost real money. I track down the bottlenecks — query plans, cache misses, N+1s — and fix them with measurable results.',
+      'Slow endpoints and flaky routes cost real money. I track down the bottlenecks — query plans, cache misses, N+1s — and fix them with measurable results — like taking a critical route from 5 minutes to 10 seconds.',
     'focus.title.ai': 'Applied AI & RAG',
     'focus.desc.ai':
       'I add AI capabilities to existing PHP backends without rebuilding your stack — semantic search, document Q&A, and retrieval pipelines that plug into your current infrastructure.',
 
     'about.heading': 'About',
     'about.summary.p1':
-      'Full Stack Engineer with 5+ years building and scaling web platforms in PHP, Laravel, and Hyperf. ' +
-      'I specialize in backend systems that handle real traffic — REST APIs, marketplace integrations, and SaaS ' +
-      'architecture across e-commerce and corporate travel. Advanced English (TOEIC C1).',
+      'Senior Full Stack Developer with 5+ years of experience building and scaling web platforms in PHP, Laravel, Hyperf, and Vue.js. ' +
+      'At Onfly, a corporate travel platform, I work on routes serving 100,000+ users — including one cut from 5 minutes to 10 seconds. ' +
+      'Before that, I built an e-commerce platform for around 500 online stores at Tribox, with payment, shipping, and ERP integrations. Advanced English (TOEIC C1).',
     'about.summary.p2':
-      'I work best on problems that are actually hard: messy third-party integrations, performance bottlenecks, ' +
-      'or adding new capabilities to systems that can\'t go down. I write clean code, communicate clearly, and ship.',
+      'Strongest areas: REST APIs, Microservices, E-commerce & ERP integrations, Performance Tuning, Redis, Docker, Sentry, and Applied AI (RAG) on PHP backends.',
 
     'skills.heading': 'Technical Skills',
     'skills.languages': 'Programming Languages',
@@ -62,12 +61,12 @@ export const ui = {
 
     'experience.heading': 'Professional Experience',
     'experience.present': 'Present',
-    'experience.title.new-rizon': 'Senior Software Engineer',
-    'experience.title.tribox': 'Senior Software Engineer',
+    'experience.title.new-rizon': 'Senior Full Stack Developer',
+    'experience.title.tribox': 'Senior Full Stack Developer',
     'experience.note.tribox': 'Started as intern in September 2020, transitioned to full-time developer in May 2021.',
 
     'education.heading': 'Education',
-    'education.degree.fatec-jau': 'Associate Degree in Information Technology Management',
+    'education.degree.fatec-jahu': 'Associate Degree in Information Technology Management',
     'education.degree.unesp': 'Bachelor of Science in Information Systems',
     'education.note.unesp': 'Completed 4 semesters',
     'education.degree.etec': 'Technical Diploma in Information Technology',
@@ -130,7 +129,7 @@ export const ui = {
   pt: {
     'meta.title': 'Felipe Trombini — Desenvolvedor Full Stack Sênior',
     'meta.description':
-      'Engenheiro Full Stack especializado em sistemas backend PHP — APIs REST, integrações com marketplaces ' +
+      'Desenvolvedor Full Stack Sênior especializado em sistemas backend PHP — APIs REST, integrações com marketplaces ' +
       'e plataformas SaaS que escalam. Disponível para novos projetos.',
 
     'nav.about': 'Sobre',
@@ -159,20 +158,18 @@ export const ui = {
       'APIs REST com contratos previsíveis e espaço para crescer. Projeto pensando na equipe que vai manter o código no ano que vem, não apenas no sprint que vai entregá-lo hoje.',
     'focus.title.performance': 'Performance & Confiabilidade',
     'focus.desc.performance':
-      'Endpoints lentos e rotas instáveis custam dinheiro real. Rastreio os gargalos — planos de query, cache miss, N+1 — e os corrijo com resultados mensuráveis.',
+      'Endpoints lentos e rotas instáveis custam dinheiro real. Rastreio os gargalos — planos de query, cache miss, N+1 — e os corrijo com resultados mensuráveis — como levar uma rota crítica de 5 minutos para 10 segundos.',
     'focus.title.ai': 'IA Aplicada & RAG',
     'focus.desc.ai':
       'Adiciono capacidades de IA a backends PHP existentes sem reescrever a stack — busca semântica, perguntas sobre documentos e pipelines de recuperação que se integram à infraestrutura atual.',
 
     'about.heading': 'Sobre',
     'about.summary.p1':
-      'Engenheiro Full Stack com mais de 5 anos construindo e escalando plataformas web em PHP, Laravel e Hyperf. ' +
-      'Especializado em sistemas backend que suportam tráfego real — APIs REST, integrações com marketplaces e ' +
-      'arquitetura SaaS em e-commerce e gestão de viagens corporativas. Inglês avançado (TOEIC C1).',
+      'Desenvolvedor Full Stack Sênior com mais de 5 anos de experiência construindo e escalando plataformas web em PHP, Laravel, Hyperf e Vue.js. ' +
+      'Na Onfly, plataforma de gestão de viagens corporativas, atuo em rotas usadas por mais de 100.000 usuários — incluindo uma que passou de 5 minutos para 10 segundos. ' +
+      'Antes disso, construí na Tribox uma plataforma de e-commerce para cerca de 500 lojas online, com integrações de pagamento, frete e ERP. Inglês avançado (TOEIC C1).',
     'about.summary.p2':
-      'Trabalho melhor em problemas que são realmente difíceis: integrações complexas com terceiros, gargalos de ' +
-      'performance ou adição de novas capacidades a sistemas que não podem parar. Escrevo código limpo, me comunico ' +
-      'com clareza e entrego.',
+      'Principais áreas: APIs REST, Microsserviços, integrações de E-commerce e ERP, Performance Tuning, Redis, Docker, Sentry e IA Aplicada (RAG) em backends PHP.',
 
     'skills.heading': 'Habilidades Técnicas',
     'skills.languages': 'Linguagens de Programação',
@@ -182,12 +179,12 @@ export const ui = {
 
     'experience.heading': 'Experiência Profissional',
     'experience.present': 'Atual',
-    'experience.title.new-rizon': 'Engenheiro de Software Sênior',
-    'experience.title.tribox': 'Engenheiro de Software Sênior',
+    'experience.title.new-rizon': 'Desenvolvedor Full Stack Sênior',
+    'experience.title.tribox': 'Desenvolvedor Full Stack Sênior',
     'experience.note.tribox': 'Iniciou como estagiário em setembro de 2020, efetivado como desenvolvedor em maio de 2021.',
 
     'education.heading': 'Formação Acadêmica',
-    'education.degree.fatec-jau': 'Tecnólogo em Gestão da Tecnologia da Informação',
+    'education.degree.fatec-jahu': 'Tecnólogo em Gestão da Tecnologia da Informação',
     'education.degree.unesp': 'Bacharelado em Sistemas de Informação',
     'education.note.unesp': '4 semestres concluídos',
     'education.degree.etec': 'Técnico em Informática',
@@ -252,42 +249,34 @@ export const ui = {
 export const experienceBullets: Record<Lang, Record<string, string[]>> = {
   en: {
     'new-rizon': [
-      'Building and scaling features on Onfly — one of Latin America\'s largest corporate travel platforms — with PHP (Hyperf) and Vue.js',
-      'Cut API route loading times by 90% through targeted backend optimization',
-      'Maintained high-traffic routes serving thousands of active users daily',
-      'Reduced frontend production bugs by 30%+ through proactive Sentry monitoring and resolution',
-      'Accelerated delivery cycles using AI-assisted workflows (Claude Code) for code review, refactoring, and debugging',
-      'Used Mixpanel and Sentry data to measure feature impact and align architecture decisions with business goals',
+      'Built and scaled features on Onfly — one of Latin America\'s largest corporate travel platforms — with PHP (Hyperf) and Vue.js, on high-traffic routes serving 100,000+ users',
+      'Cut the load time of a critical API route from 5 minutes to 10 seconds through targeted query and backend optimization',
+      'Reduced frontend production bugs by 30%+ through Sentry monitoring and resolution, and used Mixpanel and Sentry data to measure feature impact and guide architecture decisions',
       'Built and open-sourced a RAG pipeline in PHP/Hyperf — a production-ready starting point for adding AI-powered search to existing PHP backends',
+      'Accelerated delivery cycles with AI-assisted workflows (Claude Code) for code review, refactoring, and debugging',
     ],
     tribox: [
-      'Built and maintained a proprietary B2B/B2C e-commerce platform in PHP/Laravel from early-stage product to production',
-      'Integrated Mercado Livre, Bling, and Tiny — covering listings, order sync, and inventory across all channels',
+      'Built and maintained a proprietary B2B/B2C e-commerce platform in PHP/Laravel, from early-stage product to production, serving around 500 online stores',
+      'Integrated each store with a payment provider, a shipping provider, and an ERP (Bling, Tiny), plus Mercado Livre listings, order sync, and inventory',
       'Designed REST APIs for order management and third-party logistics system integration',
-      'Automated order synchronization and inventory management, eliminating manual reconciliation',
-      'Provided technical support and onboarding to corporate clients',
-      'Performed corrective and evolutionary maintenance on mission-critical applications',
-      'Collaborated with cross-functional teams using Trello for project tracking and delivery',
+      'Automated order synchronization and inventory management, saving about 1 hour per day of manual reconciliation',
+      'Delivered corrective and evolutionary maintenance on mission-critical applications and onboarded corporate clients',
     ],
   },
   pt: {
     'new-rizon': [
-      'Desenvolvimento e escalonamento de funcionalidades na Onfly — uma das maiores plataformas de gestão de viagens corporativas da América Latina — utilizando PHP (Hyperf) e Vue.js',
-      'Redução de 90% no tempo de carregamento de rotas de API através de otimização de backend direcionada',
-      'Manutenção de rotas de alto tráfego utilizadas por milhares de usuários ativos diariamente',
-      'Redução de mais de 30% nos bugs de produção do frontend através de monitoramento proativo e resolução de alertas no Sentry',
-      'Aceleração dos ciclos de entrega com fluxos de trabalho assistidos por IA (Claude Code) para revisão de código, refatoração e depuração',
-      'Uso de dados do Mixpanel e Sentry para medir o impacto de funcionalidades e alinhar decisões de arquitetura com objetivos de negócio',
+      'Desenvolvimento e escalonamento de funcionalidades na Onfly — uma das maiores plataformas de gestão de viagens corporativas da América Latina — com PHP (Hyperf) e Vue.js, em rotas de alto tráfego usadas por mais de 100.000 usuários',
+      'Redução do tempo de carregamento de uma rota crítica de API de 5 minutos para 10 segundos através de otimização direcionada de queries e backend',
+      'Redução de mais de 30% nos bugs de produção do frontend com monitoramento e resolução de alertas no Sentry, usando dados do Mixpanel e Sentry para medir o impacto de funcionalidades e orientar decisões de arquitetura',
       'Construção e publicação como open source de um pipeline RAG em PHP/Hyperf — ponto de partida pronto para produção para adicionar busca por IA a backends PHP existentes',
+      'Aceleração dos ciclos de entrega com fluxos assistidos por IA (Claude Code) para revisão de código, refatoração e depuração',
     ],
     tribox: [
-      'Construção e manutenção de plataforma de e-commerce proprietária B2B/B2C em PHP/Laravel, do estágio inicial até a produção',
-      'Integração com Mercado Livre, Bling e Tiny — cobrindo listagens, sincronização de pedidos e estoque em todos os canais',
+      'Construção e manutenção de plataforma de e-commerce proprietária B2B/B2C em PHP/Laravel, do estágio inicial até a produção, atendendo cerca de 500 lojas online',
+      'Integração de cada loja com um provedor de pagamento, um de frete e um ERP (Bling, Tiny), além de listagens, pedidos e estoque no Mercado Livre',
       'Design de APIs REST para gestão de pedidos e integração com sistemas de logística terceirizados',
-      'Automação da sincronização de pedidos e gestão de estoque, eliminando reconciliação manual',
-      'Suporte técnico e onboarding para clientes corporativos',
-      'Manutenção corretiva e evolutiva em aplicações de missão crítica',
-      'Colaboração com equipes multidisciplinares utilizando Trello para rastreamento e entrega de projetos',
+      'Automação da sincronização de pedidos e da gestão de estoque, economizando cerca de 1 hora por dia de reconciliação manual',
+      'Manutenção corretiva e evolutiva em aplicações de missão crítica e onboarding de clientes corporativos',
     ],
   },
 };
